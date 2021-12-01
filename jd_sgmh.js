@@ -312,7 +312,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `https://www.lvxiu.net/p/dj/d/RandomShareCode/git/raw/main/JD_SGMH.json?download=false`,
+      url: `https://wuzhi03.coding.net/p/dj/d/RandomShareCode/git/raw/main/JD_SGMH.json?download=false`,
       headers: {
         'Host':'api.sharecode.ga'
       },

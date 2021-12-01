@@ -321,7 +321,7 @@ function readShareCode() {
   console.log(`开始`)
   return new Promise(async resolve => {
     $.get({
-      url: `https://www.lvxiu.net/p/dj/d/RandomShareCode/git/raw/main/JD_Health.json`,
+      url: `https://wuzhi03.coding.net/p/dj/d/RandomShareCode/git/raw/main/JD_Health.json`,
       'timeout': 10000
     }, (err, resp, data) => {
       try {
