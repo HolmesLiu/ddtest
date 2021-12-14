@@ -8,6 +8,7 @@ on:
     types: started
   repository_dispatch:
     types: repo-sync
+runs-on: ubuntu-latest
 jobs:
   repo-sync:
     env:
