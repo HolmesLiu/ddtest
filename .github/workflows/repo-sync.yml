@@ -1,14 +1,12 @@
-# File: .github/workflows/repo-sync.yml
 name: A🔄自动同步🔄A
 on:
   schedule:
-    - cron: '0 */12 * * *'
+    - cron: '0 */1 * * *'
   workflow_dispatch:
   watch:
     types: started
   repository_dispatch:
     types: repo-sync
-runs-on: ubuntu-latest
 jobs:
   repo-sync:
     env:
@@ -29,13 +27,4 @@ jobs:
           source_branch: "main"
           destination_branch: "main"
           github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
-      # 我自己同步到gitee使用，其他人可忽略
-      - name: sync github -> gitee
-        uses: Yikun/hub-mirror-action@master
-        if: env.dst_key
-        with:
-          src: github/wuzhi05
-          dst: gitee/Ewardliu
-          static_list: "MyActions"
-          dst_key: ${{ secrets.GITEE_PRIVATE_KEY }}
-          dst_token: ${{ secrets.GITEE_TOKEN }}
+      
