@@ -80,7 +80,7 @@ if ($.isNode()) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     return;
   }
-  let res = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/jxmc.json')
+  let res = await getAuthorShareCode('https://www.lvxiu.net/js/jxmc.json')
   $.codeList = [];
   console.log('京喜牧场\n' +
     '更新时间：2021-10-30\n' +
