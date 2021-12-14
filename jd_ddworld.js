@@ -67,7 +67,7 @@ let tokenInfo = {}, hotInfo = {}
       hotInfo[$.UserName] = $.hot
     }
   }
-  let res = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/shareCodes/git/raw/main/ddworld.json')
+  let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
   $.shareCodes = [...$.shareCodes, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];

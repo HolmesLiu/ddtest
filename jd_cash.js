@@ -50,7 +50,7 @@ let allMessage = '';
     return;
   }
   await requireConfig()
-  $.authorCode = await getAuthorShareCode('https://wuzhi03.coding.net/p/dj/d/RandomShareCode/git/raw/main/JD_Cash.json')
+  $.authorCode = await getAuthorShareCode('https://www.lvxiu.net/js/JD_Cash.json')
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
@@ -146,7 +146,7 @@ async function appindex(info=false) {
                 return
               }
               $.signMoney = data.data.result.totalMoney;
-              console.log(`您的助力码为${data.data.result.invitedCode}`)
+              // console.log(`您的助力码为${data.data.result.invitedCode}`)
               console.log(`\n【京东账号${$.index}（${$.UserName}）的${$.name}好友互助码】${data.data.result.invitedCode}\n`);
               let helpInfo = {
                 'inviteCode': data.data.result.invitedCode,
