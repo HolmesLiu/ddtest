@@ -67,7 +67,7 @@ let tokenInfo = {}, hotInfo = {}
       hotInfo[$.UserName] = $.hot
     }
   }
-  let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
+ // let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
   if(res && res.code===200){$.shareCodes=[...(res || []),...$.shareCodes];}
   //$.shareCodes = [...$.shareCodes, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -79,7 +79,7 @@ let tokenInfo = {}, hotInfo = {}
     if ($.shareCodes && $.shareCodes.length) {
       console.log(`\n自己账号内部循环互助\n`);
       for (let j = 0; j < $.shareCodes.length && $.canHelp; j++) {
-        console.log(`账号${$.UserName} 去助力 ${$.shareCodes[j].use} 的助力码 ${$.shareCodes[j].code}`)
+        console.log(`账号${$.UserName} 去助力 ${$.shareCodes[j].use} 的助力码 ${$.shareCodes[j].code} taskToken ${$.shareCodes[j].taskToken}`)
         if ($.shareCodes[j].num === $.domax) {
           console.log(`助力失败：您的好友助力已满`)
           $.shareCodes.splice(j, 1)
