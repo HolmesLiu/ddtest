@@ -68,7 +68,8 @@ let tokenInfo = {}, hotInfo = {}
     }
   }
   let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
-  $.shareCodes = [...$.shareCodes, ...(res || [])]
+  if(res && res.code===200){$.shareCodes=[...(res || []),...$.shareCodes];}
+  //$.shareCodes = [...$.shareCodes, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
@@ -78,7 +79,6 @@ let tokenInfo = {}, hotInfo = {}
     if ($.shareCodes && $.shareCodes.length) {
       console.log(`\n自己账号内部循环互助\n`);
       for (let j = 0; j < $.shareCodes.length && $.canHelp; j++) {
-        console.log(`账号${$.shareCodes[j].taskToken}`)
         console.log(`账号${$.UserName} 去助力 ${$.shareCodes[j].use} 的助力码 ${$.shareCodes[j].code}`)
         if ($.shareCodes[j].num === $.domax) {
           console.log(`助力失败：您的好友助力已满`)
