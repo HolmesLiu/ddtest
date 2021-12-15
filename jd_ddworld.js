@@ -67,7 +67,7 @@ let tokenInfo = {}, hotInfo = {}
       hotInfo[$.UserName] = $.hot
     }
   }
-  //let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
+  let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
   //if(res && res.code===200){$.shareCodes=[...(res || []),...$.shareCodes];}
   $.shareCodes = [...$.shareCodes, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
