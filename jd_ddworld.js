@@ -79,7 +79,7 @@ let tokenInfo = {}, hotInfo = {}
     if ($.shareCodes && $.shareCodes.length) {
       console.log(`\n自己账号内部循环互助\n`);
       for (let j = 0; j < $.shareCodes.length && $.canHelp; j++) {
-        console.log(`账号${$.UserName} 去助力 ${$.shareCodes[j].use} 的助力码 ${$.shareCodes[j].code} taskToken ${$.shareCodes[j].taskToken}`)
+        console.log(`账号${$.UserName} 去助力 ${$.shareCodes[1].use} 的助力码 ${$.shareCodes[1].code} taskToken ${$.shareCodes[1].taskToken}`)
         if ($.shareCodes[j].num === $.domax) {
           console.log(`助力失败：您的好友助力已满`)
           $.shareCodes.splice(j, 1)
