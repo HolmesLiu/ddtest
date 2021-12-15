@@ -68,8 +68,8 @@ let tokenInfo = {}, hotInfo = {}
     }
   }
   let res = await getAuthorShareCode('https://www.lvxiu.net/js/ddworld.json')
-  //if(res && res.code===200){$.shareCodes=[...(res || []),...$.shareCodes];}
-  $.shareCodes = [...$.shareCodes, ...(res || [])]
+  if(res && res.code===200){$.shareCodes=[...(res || []),...$.shareCodes];}
+ // $.shareCodes = [...$.shareCodes, ...(res || [])]
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
