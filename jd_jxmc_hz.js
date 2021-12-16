@@ -132,15 +132,6 @@ if ($.isNode()) {
       $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
       UA = UAInfo[$.UserName]
       token = await getJxToken()
-      if( res && j === 0 ){
-        console.log(`账号一去助力作者：`)
-        for(let l = 0; l < res.length; l++){
-        console.log(`\n${$.UserName}去助力作者的助力码：${res[l].code}`);
-        $.oneCodeInfo = res[l];
-        await takeGetRequest('help');
-        await $.wait(2000);
-        }
-      }
       for (let k = 0; k < $.codeList.length; k++) {
         $.oneCodeInfo = $.codeList[k];
         if($.codeList[k].name === $.UserName){
@@ -183,7 +174,7 @@ async function pasture() {
         await takeGetRequest('DoMainTask');
         for (let i = 0; i < 20; i++) {
           if ($.DoMainTask.maintaskId !== "pause") {
-            await $.wait(2000)
+            await $.wait(1000)
             $.currentStep = $.DoMainTask?.finishedtaskId
             $.step = $.DoMainTask.maintaskId
             await takeGetRequest('DoMainTask');
@@ -206,16 +197,16 @@ async function pasture() {
           'max': false
         }
       );
-      await $.wait(2000)
+      await $.wait(1000)
       const petNum = ($.homeInfo?.petinfo || []).length
       
       $.crowInfo = $.homeInfo.cow;
     }
     $.GetVisitBackInfo = {};
-    await $.wait(2000);
+    await $.wait(1000);
     await takeGetRequest('GetVisitBackInfo');
     if ($.GetVisitBackInfo.iscandraw === 1) {
-      await $.wait(2000);
+      await $.wait(1000);
       await takeGetRequest('GetVisitBackCabbage');
     }
     
