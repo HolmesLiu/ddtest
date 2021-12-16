@@ -105,7 +105,7 @@ async function run() {
                 console.log(`任务${vo.taskName}，已完成`);
                 continue;
             }
-            console.log(`开始做${vo.taskName}:`);
+            console.log(`开始做${vo.taskName}:${vo.taskItem.itemName}`);
             await doTask(vo.taskType, vo.taskItem.itemId);
             await $.wait(1000 * vo.viewTime)
             await getReward(vo.taskType, vo.taskItem.itemId);
