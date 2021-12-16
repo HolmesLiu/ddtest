@@ -104,7 +104,7 @@ async function main() {
             console.log(`groupType:${$.oneTask.groupType},已完成:${$.oneTask.finishCount}次，需要完成：${$.oneTask.taskCount}次`);
             $.item = $.oneTask.item;
             let viewTime = $.oneTask.viewTime || 3;
-            console.log(`浏览：${$.item.itemName},等待${viewTime}秒`);
+            console.log(`浏览：${$.item.itemName},等待${viewTime + 2}秒`);
             await $.wait(viewTime * 1200);
             await $.wait(1300);
             await doTask();
