@@ -106,7 +106,7 @@ if ($.isNode()) {
     }
     token = await getJxToken()
     await pasture();
-    await $.wait(1000);
+    await $.wait(2000);
   }
   console.log('\n##################开始账号内互助#################\n');
   let newCookiesArr = [];
@@ -207,35 +207,24 @@ async function pasture() {
         }
       );
       await $.wait(2000)
+      const petNum = ($.homeInfo?.petinfo || []).length
+      
+      $.crowInfo = $.homeInfo.cow;
     }
     $.GetVisitBackInfo = {};
     await $.wait(2000);
+    await takeGetRequest('GetVisitBackInfo');
+    if ($.GetVisitBackInfo.iscandraw === 1) {
+      await $.wait(2000);
+      await takeGetRequest('GetVisitBackCabbage');
+    }
     
+  } catch (e) {
+    $.logErr(e)
+  }
 }
 
-async function buyNewPet(isHungery = false) {
-  let weightsTemp = -1, nameTemp = ""
-  for (let key in petInfo) {
-    const onePet = petInfo[key]
-    const { name, price, weights } = onePet
-    if (price <= $.coins) {
-      if (weights > weightsTemp) {
-        weightsTemp = weights, nameTemp = name
-        $.petType = key
-      }
-    }
-  }
-  if (weightsTemp !== -1) {
-    await buy()
-    if (!isHungery) await buyNewPet()
-  } else {
-    console.log("你目前没有金币可以直接购买鸡")
-  }
-  async function buy() {
-    console.log("去买" + nameTemp)
-    await takeGetRequest("BuyNew")
-  }
-}
+
 
 async function doTask(j) {
   for (let i = 0; i < $.taskList.length; i++) {
