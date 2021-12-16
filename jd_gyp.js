@@ -105,8 +105,8 @@ async function main() {
             $.item = $.oneTask.item;
             let viewTime = $.oneTask.viewTime || 3;
             console.log(`浏览：${$.item.itemName},等待${viewTime}秒`);
-            await $.wait(viewTime * 1000);
-            await $.wait(1000);
+            await $.wait(viewTime * 1200);
+            await $.wait(1300);
             await doTask();
             $.runFlag = true;
             break;
