@@ -848,7 +848,8 @@ let utils = {
         outstr.push("C");
         var data = {
             tm: [],
-            tnm: ["d5-15,C5,5JD,a,t","d7-15,C5,5LJ,a,t"],
+            //tnm: ["d5-15,C5,5JD,a,t","d7-15,C5,5LJ,a,t"],
+            tnm: [ 'd5-9L,JU,8DB,a,t', 'd7-9L,JU,8HF,a,t', 'd1-9M,JV,8JH,u,t' ],
             grn: 1,
             ss: TouchSession,
             wed: 'ttttt',
@@ -878,7 +879,7 @@ let utils = {
             cf_v: '01',
             bd: senddata,
             mj: [1, 0, 0],
-            blog: 'a',
+            blog: "a",
             msg: ''
         }
         // console.log(data);
