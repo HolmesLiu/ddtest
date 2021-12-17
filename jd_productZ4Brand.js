@@ -119,7 +119,7 @@ async function doTask(){
       await $.wait(2000);
       $.runFlag = true;
     }else if($.oneTask.assignmentType === 2){
-      console.log(`助力码：${$.oneTask.ext.assistTaskDetail.itemId}，用户名${$.oneTask.ext.assistTaskDetail.UserName}`);
+      console.log(`助力码：${$.oneTask.ext.assistTaskDetail.itemId}`);
       $.allInvite.push({
         'userName':$.UserName,
         'code':$.oneTask.ext.assistTaskDetail.itemId,
