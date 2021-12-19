@@ -29,12 +29,12 @@ jobs:
             - name: "运行【牛牛福利社】"
               run: |
                   node onlyOneExecute.js
-                git diff
-                git config --global user.email "273667951@qq.com"
-                git config --global user.name "HolmesLiu"
-                git add a.json
-                git commit -m "Github Action Auto Updated"
-                git push
+                  git diff
+                  git config --global user.email "273667951@qq.com"
+                  git config --global user.name "HolmesLiu"
+                  git add a.json
+                  git commit -m "Github Action Auto Updated"
+                  git push
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
                   JD_DEBUG: ${{ github.event.client_payload.JD_DEBUG || secrets.JD_DEBUG }}
