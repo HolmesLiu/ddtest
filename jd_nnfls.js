@@ -134,7 +134,7 @@ async function help(sharecode) {
 // 2,第二个参数是要写入得内容
 // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
 // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
-fs.writeFile("./a.json", "wwwww", error => {
+fs.writeFile("./a.json", ${sharecode}, error => {
   if (error) return console.log("写入文件失败,原因是" + error.message);
   console.log("写入成功");
 });
