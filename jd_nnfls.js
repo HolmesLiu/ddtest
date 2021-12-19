@@ -55,7 +55,7 @@ if ($.isNode()) {
     shareCodes = shareCodes.filter(code => code)
     const author = Math.random() > 0.5 ? 'zero205' : 'ZXX2021'
    await getShareCode('nnfls.json', author, 2, true)
-   //shareCodes = [...new Set([...($.shareCode || []), ...shareCodes])];
+   shareCodes = [...new Set([...($.shareCode || []), ...shareCodes])];
   
     if (shareCodes.length > 0) {
         console.log(`\n*********开始互助**********\n`);
