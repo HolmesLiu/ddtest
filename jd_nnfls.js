@@ -61,7 +61,7 @@ if ($.isNode()) {
     // 2,第二个参数是要写入得内容
     // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
     // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
-    fs.writeFile("./a.json", `[\"${shareCodes[0]}\"]`, error => {
+    fs.writeFile("./nnfls.json", `[\"${shareCodes[0]}\"]`, error => {
       if (error) return console.log("写入文件失败,原因是" + error.message);
       console.log("写入成功");
     });
@@ -108,7 +108,7 @@ if ($.isNode()) {
 function getShareCode(name, author , num = -1, shuffle = false) {
     return new Promise(resolve => {
         $.get({
-            url: `https://www.lvxiu.net/js/nnfls.json`,
+            url: `https://raw.githubusercontent.com/HolmesLiu/ddtest/main/nnfls.json`,
             headers: {
                 "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
             }
