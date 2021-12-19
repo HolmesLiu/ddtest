@@ -29,6 +29,15 @@ jobs:
             - name: "运行【牛牛福利社】"
               run: |
                   node onlyOneExecute.js
+            - name: Commit and push if changed   # 更新json
+               run: |
+                git diff
+                git config --global user.email "273667951@qq.com"
+                git config --global user.name "HolmesLiu"
+                git add a.json
+                git commit -m "Github Action Auto Updated"
+                git push
+
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
                   JD_DEBUG: ${{ github.event.client_payload.JD_DEBUG || secrets.JD_DEBUG }}
@@ -48,12 +57,3 @@ jobs:
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
                   SYNCURL: https://github.com/HolmesLiu/ddtest/raw/main/jd_nnfls.js
-            - name: Commit and push if changed   # 更新json
-               run: |
-                git diff
-                git config --global user.email "273667951@qq.com"
-                git config --global user.name "HolmesLiu"
-                git add a.json
-                git commit -m "Github Action Auto Updated"
-                git push
-                
