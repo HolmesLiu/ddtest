@@ -51,7 +51,7 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    let res = await getAuthorShareCode('https://www.lvxiu.net/js/fcwb.json')
+    let res = await getAuthorShareCode('https://github.com/HolmesLiu/ddtest/raw/main/fcwb.json')
     if(res && res.code===200){$.shareCodes=[...(res.data || []),...$.shareCodes];}
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
