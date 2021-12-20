@@ -51,8 +51,8 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    let res = await getAuthorShareCode('https://www.lvxiu.net/js/fcwb.json')
-    if(res && res.code===200){$.shareCodes=[...(res.data || []),...$.shareCodes];}
+    //let res = await getAuthorShareCode('https://www.lvxiu.net/js/fcwb.json')
+    if(res && res.code===200){$.shareCodes=[...$.shareCodes];}
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
         cookie = cookiesArr[i];
@@ -80,9 +80,10 @@ if ($.isNode()) {
         // 2,第二个参数是要写入得内容
         // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
         // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
-        fs.writeFile("./nnfls.json", `[\"${$.shareCodes[0].inviter}\"]`, error => {
+        //{"data":[{"inviter":"1akYNkBjJ3_PoylxO7NEc041EVkYvhFJ8-DunStgwDw","inviteCode":"fb78909d7eab4ba0be10a69e5fa9adc341271639502603783"}],"code":200}
+        fs.writeFile("./fcwb.json", `{\"data\":[{\"inviter\":\"${$.shareCodes[0].markedPin}\",\"inviteCode\":\"${$.shareCodes[0].inviteCode}\"}],\"code\":200}`, error => {
           if (error) return console.log("写入文件失败,原因是" + error.message);
-          console.log("写入nnfls.json成功");
+          console.log("写入fcwb.json成功");
         });
 //         await $.wait(1000)
 //         await BROWSE_CHANNEL(1)
