@@ -32,6 +32,8 @@ jobs:
                   git diff
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
+                  git remote set-url origin https://github.com/HolmesLiu/ddtest.git
+                  git pull --rebase
                   git add nnfls.json
                   git commit -m "Github Action Auto Updated"
                   git push
