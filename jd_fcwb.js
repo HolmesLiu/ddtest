@@ -287,7 +287,7 @@ function help(inviter, inviteCode) {
                 } else {
                     if (safeGet(data)) {
                         data = JSON.parse(data);
-                        if (data.success == true) {
+                        if (data.success == true) { 
                             console.log('助力结果：' + data.errMsg)
                         } else if (data.success == false) {
                             if(data.code === 16144){
