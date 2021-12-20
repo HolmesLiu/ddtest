@@ -52,7 +52,8 @@ if ($.isNode()) {
         return;
     }
     //let res = await getAuthorShareCode('https://www.lvxiu.net/js/fcwb.json')
-    if(res && res.code===200){$.shareCodes=[...(res.data || []),...$.shareCodes];}
+    //if(res && res.code===200){}
+    $.shareCodes=[...$.shareCodes];
     const fs = require("fs");
 
     // fs.wirteFile有三个参数
