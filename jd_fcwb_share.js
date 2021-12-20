@@ -51,17 +51,6 @@ if ($.isNode()) {
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
-    const fs = require("fs");
-
-    // fs.wirteFile有三个参数
-    // 1,第一个参数是要写入的文件路径
-    // 2,第二个参数是要写入得内容
-    // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
-    // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
-    fs.writeFile("./fcwb.json", `[\"${shareCodes[0]}\"]`, error => {
-      if (error) return console.log("写入文件失败,原因是" + error.message);
-      console.log("写入fcwb.json成功");
-    });
     //let res = await getAuthorShareCode('https://www.lvxiu.net/js/fcwb.json')
     if(res && res.code===200){$.shareCodes=[...(res.data || []),...$.shareCodes];}
     const fs = require("fs");
