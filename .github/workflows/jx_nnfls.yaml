@@ -34,8 +34,7 @@ jobs:
                   git config --global user.name "HolmesLiu"
                   git add nnfls.json
                   git commit -m "Github Action Auto Updated"
-                  git pull --rebase origin main
-                  git push -u origin main
+                  git push
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
                   JD_DEBUG: ${{ github.event.client_payload.JD_DEBUG || secrets.JD_DEBUG }}
