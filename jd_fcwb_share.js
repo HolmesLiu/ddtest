@@ -81,7 +81,7 @@ if ($.isNode()) {
         // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
         // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
         //{"data":[{"inviter":"1akYNkBjJ3_PoylxO7NEc041EVkYvhFJ8-DunStgwDw","inviteCode":"fb78909d7eab4ba0be10a69e5fa9adc341271639502603783"}],"code":200}
-        fs.writeFile("./fcwb.json", `{\"data\":[{\"inviter\":\"${$.shareCodes[0].markedPin}\",\"inviteCode\":\"${$.shareCodes[0].inviteCode}\"}],\"code\":200}`, error => {
+        fs.writeFile("./fcwb.json", `{\"data\":[{\"inviter\":\"${$.shareCodes[0].inviter}\",\"inviteCode\":\"${$.shareCodes[0].inviteCode}\"}],\"code\":200}`, error => {
           if (error) return console.log("写入文件失败,原因是" + error.message);
           console.log("写入fcwb.json成功");
         });
@@ -103,28 +103,28 @@ if ($.isNode()) {
 //         }
     }
  }
-    console.log(`\n*********开始互助*********\n`);
-    for (let i = 0; i < cookiesArr.length; i++) {
-        if (cookiesArr[i]) {
-        cookie = cookiesArr[i];
-        $.canHelp = true;//能否助力
-        $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
-        if (!isLoginInfo[$.UserName]) continue
-        $.inviter='';
-        $.inviteCode='';
-        $.index = i + 1;
-        if ($.canHelp && ($.shareCodes && $.shareCodes.length)) {
-        for (let k = 0; k < $.shareCodes.length && $.canHelp; k++) {
-            $.message = ""
-            $.inviter = $.shareCodes[k].inviter
-            $.inviteCode = $.shareCodes[k].inviteCode
-            console.log(`【京东账号${$.index}】${$.UserName}去助力${$.inviteCode}`)
-            await help($.inviter, $.inviteCode)
-            await $.wait(2000)
-            }
-         }
-       }
-     }
+    // console.log(`\n*********开始互助*********\n`);
+    // for (let i = 0; i < cookiesArr.length; i++) {
+    //     if (cookiesArr[i]) {
+    //     cookie = cookiesArr[i];
+    //     $.canHelp = true;//能否助力
+    //     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1])
+    //     if (!isLoginInfo[$.UserName]) continue
+    //     $.inviter='';
+    //     $.inviteCode='';
+    //     $.index = i + 1;
+    //     if ($.canHelp && ($.shareCodes && $.shareCodes.length)) {
+    //     for (let k = 0; k < $.shareCodes.length && $.canHelp; k++) {
+    //         $.message = ""
+    //         $.inviter = $.shareCodes[k].inviter
+    //         $.inviteCode = $.shareCodes[k].inviteCode
+    //         console.log(`【京东账号${$.index}】${$.UserName}去助力${$.inviteCode}`)
+    //         await help($.inviter, $.inviteCode)
+    //         await $.wait(2000)
+    //         }
+    //      }
+    //    }
+    //  }
 })()
 .catch((e) => {
         $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
