@@ -63,32 +63,36 @@ if ($.isNode()) {
     // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
     fs.writeFile("./nnfls.json", `[\"${shareCodes[0]}\"]`, error => {
       if (error) return console.log("写入文件失败,原因是" + error.message);
-      console.log("写入成功");
+      console.log("写入nnfls.json成功");
     });
+    fs.writeFile("./README.md", `[\"${shareCodes[0]}\"]`, error => {
+        if (error) return console.log("写入文件失败,原因是" + error.message);
+        console.log("写入README.md成功");
+      });
     const author = Math.random() > 0.5 ? 'zero205' : 'ZXX2021'
    await getShareCode('nnfls.json', author, 2, true)
      shareCodes = [...new Set([...($.shareCode || []), ...shareCodes])];
   
-    if (shareCodes.length > 0) {
-        console.log(`\n*********开始互助**********\n`);
-    }
-    for (let i = 0; i < cookiesArr.length; i++) {
-        $.cookie = cookiesArr[i];
-        $.canHelp = true;
-        $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-        console.log(`====开始账号${$.UserName}===助力`)
-        if (rcsArr.includes($.UserName) > 0) {
-            console.log("不让助力，休息会！");
-            break;
-        }
-        for (let j = 0; j < shareCodes.length; j++) {
-            if (!$.canHelp) {
-                break;
-            }
-            await help(shareCodes[j]);
-            await $.wait(1000);
-        }
-    }
+    // if (shareCodes.length > 0) {
+    //     console.log(`\n*********开始互助**********\n`);
+    // }
+    // for (let i = 0; i < cookiesArr.length; i++) {
+    //     $.cookie = cookiesArr[i];
+    //     $.canHelp = true;
+    //     $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+    //     console.log(`====开始账号${$.UserName}===助力`)
+    //     if (rcsArr.includes($.UserName) > 0) {
+    //         console.log("不让助力，休息会！");
+    //         break;
+    //     }
+    //     for (let j = 0; j < shareCodes.length; j++) {
+    //         if (!$.canHelp) {
+    //             break;
+    //         }
+    //         await help(shareCodes[j]);
+    //         await $.wait(1000);
+    //     }
+    // }
 
     
     // console.log(`\n********执行任务抽奖**********\n`);

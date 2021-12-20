@@ -10,7 +10,7 @@ on:
     watch:
         types: [started]
     repository_dispatch:
-        types: jd_nnfls
+        types: jd_nnfls_share
 
 jobs:
     build:
@@ -32,11 +32,13 @@ jobs:
                   git diff
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
-                  git remote set-url origin https://github.com/HolmesLiu/ddtest.git
-                  git pull --rebase
+                  git init
+                  git add README.md
                   git add nnfls.json
-                  git commit -m "Github Action Auto Updated"
-                  git push
+                  git commit -m "first commit"
+                  git branch -M main
+                  git remote add origin https://github.com/HolmesLiu/json.git
+                  git push -u origin main
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
                   JD_DEBUG: ${{ github.event.client_payload.JD_DEBUG || secrets.JD_DEBUG }}
