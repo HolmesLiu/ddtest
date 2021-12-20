@@ -55,4 +55,4 @@ jobs:
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
                   PAT: ${{ github.event.client_payload.PAT || secrets.PAT }} 
-                  SYNCURL: https://github.com/HolmesLiu/ddtest/raw/main/jd_nnfls.js
+                  SYNCURL: https://github.com/HolmesLiu/ddtest/raw/main/jd_nnfls_share.js
