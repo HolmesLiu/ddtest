@@ -22,6 +22,7 @@ jobs:
             - name: Use Node.js
               uses: actions/setup-node@v1
               with:
+                  github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
                   node-version: "14.x"
             - name: 安装依赖包
               run: |
@@ -53,5 +54,5 @@ jobs:
                   QYWX_AM: ${{ github.event.client_payload.QYWX_AM || secrets.QYWX_AM }}
                   PUSH_PLUS_TOKEN: ${{ github.event.client_payload.PUSH_PLUS_TOKEN || secrets.PUSH_PLUS_TOKEN }}
                   PUSH_PLUS_USER: ${{ github.event.client_payload.PUSH_PLUS_USER || secrets.PUSH_PLUS_USER }}
+                  PAT: ${{ github.event.client_payload.PAT || secrets.PAT }} 
                   SYNCURL: https://github.com/HolmesLiu/ddtest/raw/main/jd_nnfls.js
-                  
