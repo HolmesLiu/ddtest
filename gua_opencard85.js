@@ -210,7 +210,7 @@ async function run() {
     }
     await takePostRequest('startDraw');
 
-    if(flag){
+    if(flag){  
       await takePostRequest('activityContent');
     }
     console.log(`${$.score}值 游戏:${$.point}`)
