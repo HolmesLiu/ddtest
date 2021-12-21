@@ -3178,6 +3178,22 @@ if ($.isNode()) {
         }
       }
     }
+    for (let j = 0; j < thisCookiesArr.length; j++) {
+      $.cookie = thisCookiesArr[j];
+      $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
+      UA = UAInfo[$.UserName]
+      token = await getJxToken()
+      for (let k = 0; k < $.codeList.length; k++) {
+        $.oneCodeInfo = $.codeList[0];
+        if($.codeList[k].name === $.UserName){
+          continue;
+        } else {
+          console.log(`\n${$.UserName}去助力${$.codeList[0].name},助力码：${$.codeList[0].code}`);
+          await takeGetRequest('help');
+          await $.wait(2000);
+        }
+      }
+    }
   }
   const fs = require("fs");
 
