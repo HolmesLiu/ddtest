@@ -3253,13 +3253,7 @@ async function pasture() {
         max: false,
       });
     }
-    $.GetVisitBackInfo = {};
-    await $.wait(2000);
-    await takeGetRequest("GetVisitBackInfo");
-    if ($.GetVisitBackInfo.iscandraw === 1) {
-      await $.wait(2000);
-      await takeGetRequest("GetVisitBackCabbage");
-    }
+
 
 
 
