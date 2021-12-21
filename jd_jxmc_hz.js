@@ -123,8 +123,9 @@ if ($.isNode()) {
           $.codeList.push({
             'name': $.UserName,
             'code': $.inviteCodeList[k].code
-            console.log("读取成功");
+            
           });
+          console.log("读取成功");
         }
       }
     }
