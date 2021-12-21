@@ -80,7 +80,7 @@ if ($.isNode()) {
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
     return;
   }
-  let res = await getAuthorShareCode('https://www.lvxiu.net/js/jxmc.json')
+  //let res = await getAuthorShareCode('https://www.lvxiu.net/js/jxmc.json')
   $.codeList = [];
   console.log('京喜牧场\n' +
     '更新时间：2021-10-30\n' +
@@ -127,23 +127,21 @@ if ($.isNode()) {
         }
       }
     }
-    for (let j = 0; j < thisCookiesArr.length; j++) {
-      $.cookie = thisCookiesArr[j];
-      $.UserName = decodeURIComponent($.cookie.match(/pt_pin=([^; ]+)(?=;?)/) && $.cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
-      UA = UAInfo[$.UserName]
-      token = await getJxToken()
-      for (let k = 0; k < $.codeList.length; k++) {
-        $.oneCodeInfo = $.codeList[k];
-        if($.codeList[k].name === $.UserName){
-          continue;
-        } else {
-          console.log(`\n${$.UserName}去助力${$.codeList[k].name},助力码：${$.codeList[k].code}`);
-          await takeGetRequest('help');
-          await $.wait(2000);
-        }
-      }
-    }
+   
   }
+  const fs = require("fs");
+
+  // fs.wirteFile有三个参数
+  // 1,第一个参数是要写入的文件路径
+  // 2,第二个参数是要写入得内容
+  // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
+  // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
+  //[{"name":"125067951-184073","code":"g_eiitD1h9-a-PX-GytKiGrfw77E3iG0LpMlIb2JHcZF49WzEPMppCOZEF4NT9-hSSFREEq3cIXAfb0393j2bg"}]
+  fs.writeFile("./jxmc.json", `[{\"name\":\"${$.codeList[0].name}\",\"code\":\"${$.codeList[0].code}\"}]`, error => {
+    if (error) return console.log("写入文件失败,原因是" + error.message);
+    console.log("写入jxmc.json成功");
+  });
+
 })()
   .catch((e) => {
     $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -174,7 +172,7 @@ async function pasture() {
         await takeGetRequest('DoMainTask');
         for (let i = 0; i < 20; i++) {
           if ($.DoMainTask.maintaskId !== "pause") {
-            await $.wait(1000)
+            await $.wait(2000)
             $.currentStep = $.DoMainTask?.finishedtaskId
             $.step = $.DoMainTask.maintaskId
             await takeGetRequest('DoMainTask');
@@ -197,25 +195,238 @@ async function pasture() {
           'max': false
         }
       );
-      await $.wait(1000)
+      await $.wait(2000)
       const petNum = ($.homeInfo?.petinfo || []).length
-      
+      await takeGetRequest('GetCardInfo');
+      if ($.GetCardInfo && $.GetCardInfo.cardinfo) {
+        let msg = '';
+        for (let vo of $.GetCardInfo.cardinfo) {
+          if (vo.currnum > 0) {
+            msg += `${vo.currnum}张${cardinfo[vo.cardtype]}卡片 `
+          }
+          if (petNum < 6) {
+            $.cardType = vo.cardtype
+            for (let i = vo.currnum; i >= vo.neednum; i -= vo.neednum) {
+              console.log(`${cardinfo[vo.cardtype]}卡片已满${vo.neednum}张，去兑换...`)
+              await $.wait(5000)
+              await takeGetRequest("Combine")
+            }
+          }
+        }
+        console.log(`\n可抽奖次数：${$.GetCardInfo.times}${msg ? `,拥有卡片：${msg}` : ''}\n`)
+        if ($.GetCardInfo.times !== 0) {
+          console.log(`开始抽奖`)
+          for (let i = $.GetCardInfo.times; i > 0; i--) {
+            await $.wait(2000)
+            await takeGetRequest('DrawCard');
+          }
+          console.log('')
+        }
+      }
+      console.log("查看宠物信息")
+      if (!petNum) {
+        console.log(`你的鸡都生完蛋跑掉啦！！`)
+        await buyNewPet(true)
+      }
+      for (let i = 0; i < petNum; i++) {
+        $.onepetInfo = $.homeInfo.petinfo[i];
+        const { bornvalue, progress, strong, type, stage } = $.onepetInfo
+        switch (stage) {
+          case 1:
+            console.log(`这里有一只幼年${petInfo[type].name}，成长进度：${progress}%`)
+            break
+          case 2:
+            console.log(`这里有一只青年${petInfo[type].name}，生蛋进度：${bornvalue}/${strong}，成长进度：${progress}%`)
+            break
+          case 4:
+            console.log(`这里有一只壮年${petInfo[type].name}，离家出走进度（生蛋进度）：${bornvalue}/${strong}`)
+            break
+          default:
+            console.log(`这里有一只不知道什么状态的鸡：${JSON.stringify($.onepetInfo)}`)
+        }
+        $.petidList.push($.onepetInfo.petid);
+        if ($.onepetInfo.cangetborn === 1) {
+          console.log(`开始收鸡蛋`);
+          await takeGetRequest('GetEgg');
+          await $.wait(1000);
+        }
+      }
       $.crowInfo = $.homeInfo.cow;
     }
     $.GetVisitBackInfo = {};
-    await $.wait(1000);
+    await $.wait(2000);
     await takeGetRequest('GetVisitBackInfo');
     if ($.GetVisitBackInfo.iscandraw === 1) {
-      await $.wait(1000);
+      await $.wait(2000);
       await takeGetRequest('GetVisitBackCabbage');
     }
-    
+    await $.wait(2000);
+    $.GetSignInfo = {};
+    await takeGetRequest('GetSignInfo');
+    if (JSON.stringify($.GetSignInfo) !== '{}' && $.GetSignInfo.signlist) {
+      let signList = $.GetSignInfo.signlist;
+      for (let j = 0; j < signList.length; j++) {
+        if (signList[j].fortoday && !signList[j].hasdone) {
+          await $.wait(2000);
+          console.log(`去签到`);
+          await takeGetRequest('GetSignReward');
+        }
+      }
+    }
+    await $.wait(2000);
+    if ($.crowInfo.lastgettime) {
+      console.log('收奶牛金币');
+      await takeGetRequest('cow');
+      await $.wait(2000);
+    }
+    await $.wait(2000);
+    await takeGetRequest('GetUserLoveInfo');
+    if ($.GetUserLoveInfo) {
+      for (let key of Object.keys($.GetUserLoveInfo)) {
+        let vo = $.GetUserLoveInfo[key]
+        if (vo.drawstatus === 1) {
+          await $.wait(2000);
+          $.lovevalue = vo.lovevalue;
+          await takeGetRequest('DrawLoveHongBao');
+        }
+      }
+    }
+    $.taskList = [];
+    $.dateType = ``;
+    $.source = `jxmc`;
+    $.bizCode = `jxmc`;
+    for (let j = 2; j >= 0; j--) {
+      if (j === 0) {
+        $.dateType = ``;
+      } else {
+        $.dateType = j;
+      }
+      await takeGetRequest('GetUserTaskStatusList');
+      await $.wait(2000);
+      await doTask(j);
+      await $.wait(2000);
+      if (j === 2) {
+        //割草
+        console.log(`\n开始进行割草`);
+        $.runFlag = true;
+        for (let i = 0; i < 30 && $.runFlag; i++) {
+          $.mowingInfo = {};
+          console.log(`开始第${i + 1}次割草`);
+          await takeGetRequest('mowing');
+          await $.wait(2000);
+          if ($.mowingInfo.surprise === true) {
+            //除草礼盒
+            console.log(`领取除草礼盒`);
+            await takeGetRequest('GetSelfResult');
+            await $.wait(3000);
+          }
+        }
+
+        //横扫鸡腿
+        $.runFlag = true;
+        console.log(`\n开始进行横扫鸡腿`);
+        for (let i = 0; i < 30 && $.runFlag; i++) {
+          console.log(`开始第${i + 1}次横扫鸡腿`);
+          await takeGetRequest('jump');
+          await $.wait(2000);
+        }
+      }
+    }
+    $.taskList = [];
+    $.dateType = `2`;
+    $.source = `jxmc_zanaixin`;
+    $.bizCode = `jxmc_zanaixin`;
+    for (let j = 2; j >= 0; j--) {
+      await takeGetRequest('GetUserTaskStatusList');
+      await $.wait(2000);
+      await doTask(j);
+      await $.wait(2000);
+    }
+
+    await takeGetRequest('GetHomePageInfo');
+    await $.wait(2000);
+    let materialNumber = 0;
+    let materialinfoList = $.homeInfo.materialinfo;
+    for (let j = 0; j < materialinfoList.length; j++) {
+      if (materialinfoList[j].type !== 1) {
+        continue;
+      }
+      materialNumber = Number(materialinfoList[j].value);//白菜数量
+    }
+    if (Number($.homeInfo.coins) > 5000) {
+      let canBuyTimes = Math.floor(Number($.homeInfo.coins) / 5000);
+      console.log(`\n共有金币${$.homeInfo.coins},可以购买${canBuyTimes}次白菜`);
+      if (Number(materialNumber) < 400) {
+        for (let j = 0; j < canBuyTimes && j < 4; j++) {
+          console.log(`第${j + 1}次购买白菜`);
+          await takeGetRequest('buy');
+          await $.wait(2000);
+        }
+        await takeGetRequest('GetHomePageInfo');
+        await $.wait(2000);
+      } else {
+        console.log(`现有白菜${materialNumber},大于400颗,不进行购买`);
+      }
+    } else {
+      console.log(`\n共有金币${$.homeInfo.coins}`);
+    }
+    materialinfoList = $.homeInfo.materialinfo;
+    for (let j = 0; j < materialinfoList.length; j++) {
+      if (materialinfoList[j].type !== 1) {
+        continue;
+      }
+      if (Number(materialinfoList[j].value) > 10) {
+        $.canFeedTimes = Math.floor(Number(materialinfoList[j].value) / 10);
+        console.log(`\n共有白菜${materialinfoList[j].value}颗，每次喂10颗，可以喂${$.canFeedTimes}次`);
+        $.runFeed = true;
+        for (let k = 0; k < $.canFeedTimes && $.runFeed && k < 40; k++) {
+          $.pause = false;
+          console.log(`开始第${k + 1}次喂白菜`);
+          await takeGetRequest('feed');
+          await $.wait(4000);
+          if ($.pause) {
+            await takeGetRequest('GetHomePageInfo');
+            await $.wait(1000);
+            for (let n = 0; n < $.homeInfo.petinfo.length; n++) {
+              $.onepetInfo = $.homeInfo.petinfo[n];
+              if ($.onepetInfo.cangetborn === 1) {
+                console.log(`开始收鸡蛋`);
+                await takeGetRequest('GetEgg');
+                await $.wait(1000);
+              }
+            }
+          }
+        }
+      }
+    }
   } catch (e) {
     $.logErr(e)
   }
 }
 
-
+async function buyNewPet(isHungery = false) {
+  let weightsTemp = -1, nameTemp = ""
+  for (let key in petInfo) {
+    const onePet = petInfo[key]
+    const { name, price, weights } = onePet
+    if (price <= $.coins) {
+      if (weights > weightsTemp) {
+        weightsTemp = weights, nameTemp = name
+        $.petType = key
+      }
+    }
+  }
+  if (weightsTemp !== -1) {
+    await buy()
+    if (!isHungery) await buyNewPet()
+  } else {
+    console.log("你目前没有金币可以直接购买鸡")
+  }
+  async function buy() {
+    console.log("去买" + nameTemp)
+    await takeGetRequest("BuyNew")
+  }
+}
 
 async function doTask(j) {
   for (let i = 0; i < $.taskList.length; i++) {
