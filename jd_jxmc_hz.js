@@ -105,8 +105,8 @@ if ($.isNode()) {
       continue
     }
    // token = await getJxToken()
-   // await pasture();
-  //  await $.wait(2000);
+    await pasture();
+    await $.wait(2000);
   }
   console.log('\n##################开始账号内互助#################\n');
   let newCookiesArr = [];
@@ -123,6 +123,7 @@ if ($.isNode()) {
           $.codeList.push({
             'name': $.UserName,
             'code': $.inviteCodeList[k].code
+            console.log("读取成功");
           });
         }
       }
@@ -137,7 +138,7 @@ if ($.isNode()) {
   // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
   // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
   //[{"name":"125067951-184073","code":"g_eiitD1h9-a-PX-GytKiGrfw77E3iG0LpMlIb2JHcZF49WzEPMppCOZEF4NT9-hSSFREEq3cIXAfb0393j2bg"}]
-  fs.writeFile("./jxmc.json", `[{\"name\":\"${$.codeList[0].name}\",\"code\":\"${$.codeList[0].code}\"}]`, error => {
+  fs.writeFile("./jxmc.json", `[{\"name\":\"${$.codeList[0].UserName}\",\"code\":\"${$.codeList[0].code}\"}]`, error => {
     if (error) return console.log("写入文件失败,原因是" + error.message);
     console.log("写入jxmc.json成功");
   });
