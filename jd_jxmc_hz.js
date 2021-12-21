@@ -104,9 +104,9 @@ if ($.isNode()) {
       }
       continue
     }
-    token = await getJxToken()
-    await pasture();
-    await $.wait(2000);
+   // token = await getJxToken()
+   // await pasture();
+  //  await $.wait(2000);
   }
   console.log('\n##################开始账号内互助#################\n');
   let newCookiesArr = [];
