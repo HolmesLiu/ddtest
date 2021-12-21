@@ -101,7 +101,7 @@ let activityCookie =''
   $.userId = '10299171'
   $.actId = 'ceec991880424cd093aa7c58e8c05_788'
   $.MixNicks = ''
-  $.inviteNick = 'jJngxInVOgsjftAvjP1dgF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w=='
+  $.inviteNick = 'GtTX3ygOCOD2ZMWC4/P6uF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w=='
   console.log(`活动地址:https://prodev.m.jd.com/mall/active/46aVVPucasNjXHQnbzEiDLKWYvrQ/index.html`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
@@ -211,7 +211,7 @@ async function run() {
     console.log($.MixNick)
     console.log(`当前助力:${$.inviteNick}`)
     if($.index == 1){
-      $.inviteNick = $.MixNick
+      $.inviteNick = $.inviteNick
       console.log(`后面的号都会助力:${$.inviteNick}`)
     }
     await $.wait(parseInt(Math.random() * 1000 + 5000, 10))
