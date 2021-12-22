@@ -35,8 +35,8 @@ cron:30 3 23-30/2 12 *
 30 3 23-30/2 12 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard89.js, tag=12.18~12.30 京选大牌 超会宠你, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
 let guaopenwait = "0"
 
 const $ = new Env('12.18~12.30 京选大牌 超会宠你');
@@ -95,7 +95,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "4c1162ed00874ba5ac0447c30cc45f8a"
-  $.shareUuid = "33ede6e971bb47f9a4df84cfc4ef9102"
+  $.shareUuid = "fe990f45b53e4a3fb30930b576c08968"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
@@ -262,7 +262,7 @@ async function run() {
     console.log($.actorUuid)
     console.log(`当前助力:${$.shareUuid}`)
     if($.index == 1){
-      $.shareUuid = $.actorUuid
+      $.shareUuid = $.shareUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
     await $.wait(parseInt(Math.random() * 1000 + 5000, 10))
