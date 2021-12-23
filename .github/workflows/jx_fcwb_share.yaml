@@ -6,7 +6,7 @@ name: 发财挖宝
 on:
     workflow_dispatch:
     schedule:
-        - cron: "30 0 * * * "
+        - cron: "04 0 * * * "
     watch:
         types: [started]
     repository_dispatch:

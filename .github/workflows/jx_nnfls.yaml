@@ -6,7 +6,7 @@ name: 牛牛福利社
 on:
     workflow_dispatch:
     schedule:
-        - cron: "30 0,8 * * * "
+        - cron: "00 00 * * * "
     watch:
         types: [started]
     repository_dispatch:
