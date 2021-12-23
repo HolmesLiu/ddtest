@@ -39,8 +39,8 @@ cron:30 4 24,25,26 12 *
 30 4 24,25,26 12 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard91.js, tag=12.20～12.26 联合开卡, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
 let guaopenwait = "0"
 let guaopencard_draw = "0"
 
