@@ -106,7 +106,7 @@ let activityCookie =''
   $.userId = '10299171'
   $.actId = '82243a5746d04_1220'
   $.MixNicks = ''
-  $.inviteNick = 'jJngxInVOgsjftAvjP1dgF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w=='
+  $.inviteNick = 'GtTX3ygOCOD2ZMWC4/P6uF4tLNYA4seuA67MOIYQxEk3Vl9+AVo4NF+tgyeIc6A6kdK3rLBQpEQH9V4tdrrh0w=='
   console.log(`活动地址:https://3.cn/103-Mi73p`)
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
