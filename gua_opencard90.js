@@ -234,7 +234,7 @@ async function run() {
     console.log($.MixNick)
     console.log(`当前助力:${$.inviteNick}`)
     if($.index == 1){
-      $.inviteNick = $.MixNick
+      $.inviteNick = $.inviteNick
       console.log(`后面的号都会助力:${$.inviteNick}`)
     }
     await $.wait(parseInt(Math.random() * 1000 + 5000, 10))
