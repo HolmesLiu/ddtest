@@ -40,7 +40,8 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
   }
   let res = await getAuthorShareCode('https://www.lvxiu.net/js/jd_red.json')
   $.authorMyShareIds = [...(res || [])];
-  console.log(`\n账号助理码为${$.authorMyShareIds[0]}\n`);
+
+
 
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -64,32 +65,20 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       await showMsg();
     }
   }
+  
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     $.index = i + 1;
     $.UserName = decodeURIComponent(cookie.match(/pt_pin=([^; ]+)(?=;?)/) && cookie.match(/pt_pin=([^; ]+)(?=;?)/)[1]);
     $.canHelp = true;
     $.redPacketId = [...new Set($.redPacketId)];
-    if ($.canHelp && ($.authorMyShareIds && $.authorMyShareIds.length)) {
-      console.log(`\n\n作者进行助力`);
-      for (let j = 0; j < $.authorMyShareIds.length && $.canHelp; j++) {
-        console.log(`\n账号 ${$.index} ${$.UserName} 开始给作者 ${$.authorMyShareIds[j]} 进行助力`)
-        $.max = false;
-        await jinli_h5assist($.authorMyShareIds[j]);
-        await $.wait(2000)
-        if ($.max) {
-          $.authorMyShareIds.splice(j, 1)
-          j--
-          continue
-        }
-      }
-    }
+
     if (cookiesArr && cookiesArr.length >= 2) {
       console.log(`\n\n自己账号内部互助`);
       for (let j = 0; j < $.redPacketId.length && $.canHelp; j++) {
-        console.log(`账号 ${$.index} ${$.UserName} 开始给 ${$.redPacketId[j]} 进行助力`)
+        console.log(`账号 ${$.index} ${$.UserName} 开始给 ${$.redPacketId[0]} 进行助力`)
         $.max = false;
-        await jinli_h5assist($.redPacketId[j]);
+        await jinli_h5assist($.redPacketId[0]);
         await $.wait(2000)
         if ($.max) {
           $.redPacketId.splice(j, 1)
@@ -99,6 +88,18 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       }
     }
   }
+  console.log(`\n账号助理码为${$.redPacketId[0]}\n`);
+  const fs = require("fs");
+
+    // fs.wirteFile有三个参数
+    // 1,第一个参数是要写入的文件路径
+    // 2,第二个参数是要写入得内容
+    // 3,第三个参数是可选参数,表示要写入的文件编码格式,一般就不写,默认就行
+    // 4,第四个参数是个回调函数  只有一个参数error,来判断是否写入成功
+    fs.writeFile("./jd_red.json", `[\"${$.redPacketId[0]}\"]`, error => {
+      if (error) return console.log("写入文件失败,原因是" + error.message);
+      console.log("写入jd_red.json成功");
+    });
 })()
     .catch((e) => {
       $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
@@ -109,10 +110,10 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
 
 async function redPacket() {
   try {
-    await doLuckDrawFun();//券后9.9抽奖
-    await taskHomePage();//查询任务列表
-    await doTask();//领取任务，做任务，领取红包奖励
-    await h5activityIndex();//查询红包基础信息
+   // await doLuckDrawFun();//券后9.9抽奖
+   // await taskHomePage();//查询任务列表
+  //  await doTask();//领取任务，做任务，领取红包奖励
+  //  await h5activityIndex();//查询红包基础信息
     await red();//红包任务(发起助力红包,领取助力红包等)
     await h5activityIndex();
   } catch (e) {
