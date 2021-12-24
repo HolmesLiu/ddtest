@@ -34,7 +34,7 @@ jobs:
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
                   git add jxmc.json
-                  git commit -m "Github Action Auto Updated"
+                  git commit -m "jxmc.json Auto Updated"
                   git push 
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}

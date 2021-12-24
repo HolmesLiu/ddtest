@@ -21,8 +21,8 @@ jobs:
             - name: Use Node.js 14.x
               uses: actions/setup-node@v1
               with:
-                  node-version: 14.x
                   github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
+                  node-version: 14.x
             - name: npm install
               run: |
                   npm install
@@ -33,7 +33,7 @@ jobs:
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
                   git add jd_red.json
-                  git commit -m "Github Action Auto Updated"
+                  git commit -m "jd_red.json Auto Updated"
                   git push
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}

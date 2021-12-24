@@ -34,7 +34,7 @@ jobs:
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
                   git add fcwb.json
-                  git commit -m "Github Action Auto Updated"
+                  git commit -m "fcwb.json Auto Updated"
                   git push
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
