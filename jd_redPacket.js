@@ -38,7 +38,7 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', {"open-url": "https://bean.m.jd.com/bean/signIndex.action"});
     return;
   }
-  let res = await getAuthorShareCode('https://www.lvxiu.net/js/jd_red.json')
+  let res = await getAuthorShareCode('https://raw.githubusercontent.com/HolmesLiu/ddtest/main/jd_red.json')
   $.authorMyShareIds = [...(res || [])];
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
@@ -71,9 +71,9 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     if ($.canHelp && ($.authorMyShareIds && $.authorMyShareIds.length)) {
       console.log(`\n\n作者进行助力`);
       for (let j = 0; j < $.authorMyShareIds.length && $.canHelp; j++) {
-        console.log(`\n账号 ${$.index} ${$.UserName} 开始给作者 ${$.authorMyShareIds[j]} 进行助力`)
+        console.log(`\n账号 ${$.index} ${$.UserName} 开始给作者 ${$.authorMyShareIds[0]} 进行助力`)
         $.max = false;
-        await jinli_h5assist($.authorMyShareIds[j]);
+        await jinli_h5assist($.authorMyShareIds[0]);
         await $.wait(2000)
         if ($.max) {
           $.authorMyShareIds.splice(j, 1)
@@ -82,12 +82,12 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
         }
       }
     }
-    if (cookiesArr && cookiesArr.length >= 2) {
+    if (cookiesArr && cookiesArr.length >= 1) {
       console.log(`\n\n自己账号内部互助`);
       for (let j = 0; j < $.redPacketId.length && $.canHelp; j++) {
-        console.log(`账号 ${$.index} ${$.UserName} 开始给 ${$.redPacketId[j]} 进行助力`)
+        console.log(`账号 ${$.index} ${$.UserName} 开始给 ${$.authorMyShareIds[0]} 进行助力`)
         $.max = false;
-        await jinli_h5assist($.redPacketId[j]);
+        await jinli_h5assist($.authorMyShareIds[0]);
         await $.wait(2000)
         if ($.max) {
           $.redPacketId.splice(j, 1)
