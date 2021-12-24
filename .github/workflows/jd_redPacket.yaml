@@ -27,8 +27,6 @@ jobs:
             - name: 安装依赖包
               run: |
                   npm install
-              run: |
-                  npm install
             - name: "运行 【京东全民抢红包】"
               run: |
                   node onlyOneExecute.js
