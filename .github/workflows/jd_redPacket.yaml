@@ -34,6 +34,8 @@ jobs:
                   git config --global user.name "HolmesLiu"
                   git add jd_red.json
                   git commit -m "jd_red.json Auto Updated"
+                  git checkout -b temp
+                  git checkout main
                   git push
               env:
                   JD_COOKIE: ${{ github.event.client_payload.JD_COOKIE || secrets.JD_COOKIE }}
