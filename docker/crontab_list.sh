@@ -65,7 +65,7 @@
 # 推一推
 20 3,13 * * * node /scripts/jd_tyt.js >> /scripts/logs/jd_tyt.log 2>&1
 # 省钱大赢家翻翻乐
-20 * * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+27 0-23/6 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 # 签到免单
 1 0,12,18 * * * node /scripts/jd_speed_signfree.js >> /scripts/logs/jd_speed_signfree.log 2>&1
 # 超级盒子
@@ -163,6 +163,7 @@
 0 1,17 * * * node /scripts/jd_shake.js >> /scripts/logs/jd_shake.log 2>&1
 #京东试用（默认注释，请配合取关脚本使用）
 10 0 * * *  node /scripts/jd_try_new.js >> /scripts/logs/jd_try_new.log 2>&1
+59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 ##############默认注释活动##############
 # jd_cash_exchange
 # 0,1,2 0 * * * node /scripts/jd_cash_exchange.js >> /scripts/logs/jd_cash_exchange.log 2>&1
@@ -170,3 +171,29 @@
 # 48 20 * * * node /scripts/jx_aid_cashback.js >> /scripts/logs/jx_aid_cashback.log 2>&1
 # 清空购物车
 # 0 1 * * * node /scripts/jd_CartRemove.js >> /scripts/logs/jd_CartRemove.log 2>&1
+
+10 0,7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.js 2>&1
+0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.js 2>&1
+30 6 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.js 2>&1
+1 8 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.js 2>&1
+5 8 * * * node /scripts/jd_dpqd2.js >> /scripts/logs/jd_dpqd2.js 2>&1
+15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.js 2>&1
+26 14 * 7 * node /scripts/jd_jr_draw.js >> /scripts/logs/jd_jr_draw.js 2>&1
+30 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.js 2>&1
+1 6 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.js 2>&1
+2 7 * 12 * node /scripts/jd_gyp.js.js >> /scripts/logs/jd_gyp.js.js 2>&1
+5 0 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.js 2>&1
+1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.js 2>&1
+0 * * * * node /scripts/jd_redrain.js >> /scripts/logs/jd_redrain.js 2>&1
+31 20-23/1 * * * node /scripts/jd_redrain_half.js >> /scripts/logs/jd_redrain_half.js 2>&1
+20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.js 2>&1
+#推推赚钱 放git
+0 0-23/4 * * * node /scripts/jd_tuitui.js >> /scripts/logs/jd_tuitui.js 2>&1
+20 0-23/3 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.js 2>&1
+30 1 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard85.js >> /scripts/logs/gua_opencard85.js 2>&1
+30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86.js >> /scripts/logs/gua_opencard86.js 2>&1
+30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86s.js >> /scripts/logs/gua_opencard86s.js 2>&1
+30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard87.js >> /scripts/logs/gua_opencard87.js 2>&1
+30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard88.js >> /scripts/logs/gua_opencard88.js 2>&1
+30 3 23-30/2 12 * node /scripts/gua_opencard89.js >> /scripts/logs/gua_opencard89.js 2>&1
+0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.js 2>&1
