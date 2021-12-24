@@ -17,13 +17,16 @@ jobs:
         runs-on: ubuntu-latest
         if: github.event.repository.owner.id == github.event.sender.id
         steps:
-            - uses: actions/checkout@v1
+            - name: 拉取代码
+              uses: actions/checkout@v2
             - name: Use Node.js 14.x
               uses: actions/setup-node@v1
               with:
                   github_token: ${{ github.event.client_payload.PAT || secrets.PAT }}
-                  node-version: 14.x
-            - name: npm install
+                  node-version: "14.x"
+            - name: 安装依赖包
+              run: |
+                  npm install
               run: |
                   npm install
             - name: "运行 【京东全民抢红包】"
