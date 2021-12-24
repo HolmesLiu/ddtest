@@ -62,7 +62,6 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
       }
       $.discount = 0;
       await redPacket();
-      await showMsg();
     }
   }
   
@@ -73,19 +72,11 @@ const JD_API_HOST = 'https://api.m.jd.com/api';
     $.canHelp = true;
     $.redPacketId = [...new Set($.redPacketId)];
 
-    if (cookiesArr && cookiesArr.length >= 2) {
+    if (cookiesArr && cookiesArr.length >= 1) {
       console.log(`\n\n自己账号内部互助`);
-      for (let j = 0; j < $.redPacketId.length && $.canHelp; j++) {
-        console.log(`账号 ${$.index} ${$.UserName} 开始给 ${$.redPacketId[0]} 进行助力`)
-        $.max = false;
-        await jinli_h5assist($.redPacketId[0]);
-        await $.wait(2000)
-        if ($.max) {
-          $.redPacketId.splice(j, 1)
-          j--
-          continue
-        }
-      }
+      console.log(`账号 ${$.index} ${$.UserName} 开始给 ${$.redPacketId[0]} 进行助力`)
+      await jinli_h5assist($.redPacketId[0]);
+      await $.wait(2000)
     }
   }
   console.log(`\n账号助理码为${$.redPacketId[0]}\n`);
