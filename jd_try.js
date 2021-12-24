@@ -20,8 +20,6 @@ export JD_TRY_SENDNUM="10" #每隔多少账号发送一次通知，不需要可�
 cron "4 1-22/8 * * *" jd_try.js, tag:京东试用
 
  */
-export JD_TRY="true"
-export JD_TRY_PASSZC="true"
 const $ = new Env('京东试用')
 const URL = 'https://api.m.jd.com/client.action'
 let trialActivityIdList = []
