@@ -30,7 +30,8 @@ jobs:
             - name: "运行【发财挖宝分享】"
               run: |
                   node onlyOneExecute.js
-                  git diff
+                  git diff HEAD --exit-code
+                  git reset --hard FETCH_HEAD
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
                   git add fcwb.json

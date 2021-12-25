@@ -6,7 +6,7 @@ name: 全民抢红包
 on:
     workflow_dispatch:
     schedule:
-        - cron: "21 0-23/1 * * *"
+        - cron: "21 0-23/2 * * *"
     watch:
         types: [started]
     repository_dispatch:
@@ -30,7 +30,8 @@ jobs:
             - name: "运行 【京东全民抢红包】"
               run: |
                   node onlyOneExecute.js
-                  git diff
+                  git diff HEAD --exit-code
+                  git reset --hard FETCH_HEAD
                   git config --global user.email "273667951@qq.com"
                   git config --global user.name "HolmesLiu"
                   git add jd_red.json
