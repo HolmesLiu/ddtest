@@ -128,7 +128,7 @@ if ($.isNode()) {
               console.log(`作者的助力已满`)
               continue
             }
-            await helpSignhb("53f22ae61efd379174093fce1cd4b7ba")
+            await helpSignhb(resArr[j].smp)
             await $.wait(2000)
             break
           }
@@ -151,7 +151,7 @@ if ($.isNode()) {
               console.log(`您的好友助力已满`)
               continue
             }
-            await helpSignhb("53f22ae61efd379174093fce1cd4b7ba")
+            await helpSignhb($.shareCodes[j].smp)
             await $.wait(2000)
             if (!$.black) $.shareCodes[j].num++
             break
