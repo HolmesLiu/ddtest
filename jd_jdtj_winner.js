@@ -1,24 +1,21 @@
 /*
-京东特价翻翻乐
-一天可翻多次，但有上限
-运气好每次可得0.3元以上的微信现金(需京东账号绑定到微信)
+京东特价--翻翻乐 调整后版本
+
+by:  https://github.com/shufflewzc/faker2/blob/main/jd_jdtj_winner.js
 脚本兼容: QuantumultX, Surge,Loon, JSBox, Node.js
 =================================Quantumultx=========================
 [task_local]
-#京东特价翻翻乐
-20 0-23/3 * * * https://raw.githubusercontent.com/444444/JDJB/main/jd_jdtj_winner.js, tag=京东特价翻翻乐, img-url=https://github.com/58xinian/icon/raw/master/jdgc.png, enabled=true
-
-================Loon==============
+#京东特价--翻翻乐
+12 0-23/4 * * * https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_jdtj_winner.js, tag=京东特价--翻翻乐, img-url=https://raw.githubusercontent.com/Orz-3/mini/master/Color/jd.png, enabled=true
+=================================Loon===================================
 [Script]
-cron "20 0-23/3 * * *" script-path=https://raw.githubusercontent.com/444444/JDJB/main/jd_jdtj_winner.js,tag=京东特价翻翻乐
-
-===============Surge=================
-京东特价翻翻乐 = type=cron,cronexp="20 0-23/3 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/444444/JDJB/main/jd_jdtj_winner.js
-
-============小火箭=========
-京东特价翻翻乐 = type=cron,script-path=https://raw.githubusercontent.com/444444/JDJB/main/jd_jdtj_winner.js, cronexpr="20 0-23/3 * * *", timeout=3600, enable=true
+cron "12 0-23/4 * * *" script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_jdtj_winner.js,tag=京东特价--翻翻乐
+===================================Surge================================
+京东特价--翻翻乐 = type=cron,cronexp="12 0-23/4 * * *",wake-system=1,timeout=3600,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_jdtj_winner.js
+====================================小火箭=============================
+京东特价--翻翻乐 = type=cron,script-path=https://raw.githubusercontent.com/jiulan/platypus/main/scripts/jd_jdtj_winner.js, cronexpr="12 0-23/4 * * *", timeout=3600, enable=true
  */
-const $ = new Env('京东特价翻翻乐');
+const $ = new Env('京东特价--翻翻乐');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -26,15 +23,15 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [], cookie = '', message = '', linkId = 'ouLEuSSoBzj9b9YYYIsiDA', fflLinkId = 'ouLEuSSoBzj9b9YYYIsiDA';
 const money = process.env.BIGWINNER_MONEY || 0.3
 if ($.isNode()) {
-  Object.keys(jdCookieNode).forEach((item) => {
-    cookiesArr.push(jdCookieNode[item])
-  })
-  if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
+    Object.keys(jdCookieNode).forEach((item) => {
+        cookiesArr.push(jdCookieNode[item])
+    })
+    if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
 } else {
-  cookiesArr = [
-    $.getdata("CookieJD"),
-    $.getdata("CookieJD2"),
-    ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
+    cookiesArr = [
+        $.getdata("CookieJD"),
+        $.getdata("CookieJD2"),
+        ...$.toObj($.getdata("CookiesJD") || "[]").map((item) => item.cookie)].filter((item) => !!item);
 }
 const len = cookiesArr.length;
 
@@ -61,12 +58,12 @@ const len = cookiesArr.length;
         if ($.isNode()) await notify.sendNotify($.name, message);
     }
 })()
-  .catch((e) => {
-    $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
-  })
-  .finally(() => {
-    $.done();
-  })
+    .catch((e) => {
+        $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+    })
+    .finally(() => {
+        $.done();
+    })
 
 async function main() {
     try {
@@ -260,7 +257,7 @@ function openRedReward(functionId = 'gambleChangeReward', type) {
         })
     })
 }
-//翻翻乐提现
+//京东特价--翻翻乐
 function apCashWithDraw(id, poolBaseId, prizeGroupId, prizeBaseId, prizeType) {
     const headers = {
         'Host': 'api.m.jd.com',
