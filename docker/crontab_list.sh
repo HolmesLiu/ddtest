@@ -95,7 +95,9 @@
 ##美丽研究院
 20 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
 20 12 * * * node /scripts/jd_beauty_ex.js >> /scripts/logs/jd_beauty_ex.log 2>&1
-##
+##京东集魔方
+22 0,20 27-31,1 12,1 * node /scripts/jd_desire.js >> /scripts/logs/jd_desire.log 2>&1
+
 
 ##############长期活动##############
 # 签到
