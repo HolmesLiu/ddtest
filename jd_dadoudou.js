@@ -175,7 +175,7 @@ function task(function_id, body, isCommon = 0) {
                         if (data.result) {
                             switch (function_id) {
                                 case 'customer/getSimpleActInfoVo':
-                                    $.jdActivityId = data.data.jdActivityId;
+                                   // $.jdActivityId = data.data.jdActivityId;
                                     $.venderId = data.data.venderId;
                                     $.activityShopId = data.data.venderId;
                                     break;
