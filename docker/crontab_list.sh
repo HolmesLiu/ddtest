@@ -193,7 +193,5 @@
 30 1 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard85.js >> /scripts/logs/gua_opencard85.js 2>&1
 30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86.js >> /scripts/logs/gua_opencard86.js 2>&1
 30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86s.js >> /scripts/logs/gua_opencard86s.js 2>&1
-30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard87.js >> /scripts/logs/gua_opencard87.js 2>&1
 30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard88.js >> /scripts/logs/gua_opencard88.js 2>&1
-30 3 23-30/2 12 * node /scripts/gua_opencard89.js >> /scripts/logs/gua_opencard89.js 2>&1
 0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.js 2>&1
