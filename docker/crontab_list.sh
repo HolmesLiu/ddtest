@@ -164,6 +164,10 @@
 #京东试用（默认注释，请配合取关脚本使用）
 4 1-22/8 * * * node /scripts/jd_try.js >> /scripts/logs/jd_try.log 2>&1
 59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
+
+#年货签到
+14 2,20 * * * node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
+
 ##############默认注释活动##############
 # jd_cash_exchange
 # 0,1,2 0 * * * node /scripts/jd_cash_exchange.js >> /scripts/logs/jd_cash_exchange.log 2>&1
@@ -195,3 +199,4 @@
 30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86s.js >> /scripts/logs/gua_opencard86s.js 2>&1
 30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard88.js >> /scripts/logs/gua_opencard88.js 2>&1
 0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.js 2>&1
+
