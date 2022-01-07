@@ -194,11 +194,8 @@
 #推推赚钱 放git
 0 0-23/4 * * * node /scripts/jd_tuitui.js >> /scripts/logs/jd_tuitui.js 2>&1
 20 0-23/3 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.js 2>&1
-30 1 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard85.js >> /scripts/logs/gua_opencard85.js 2>&1
-30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86.js >> /scripts/logs/gua_opencard86.js 2>&1
-30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard86s.js >> /scripts/logs/gua_opencard86s.js 2>&1
-30 2 21-31/2,2-5/2 12,1 * node /scripts/gua_opencard88.js >> /scripts/logs/gua_opencard88.js 2>&1
 0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.js 2>&1
 
-30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.js 2>&1
-
+#30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.js 2>&1
+#30 1 6-31/2,31 1 * node /scripts/gua_opencard93.js >> /scripts/logs/gua_opencard93.js 2>&1
+#30 2 3-9/2 1 * node /scripts/gua_opencard92.js >> /scripts/logs/gua_opencard92.js 2>&1
