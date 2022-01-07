@@ -25,7 +25,7 @@ guaopenwait93="0"
 
 All变量适用
 ————————————————
-入口：[ 1.6～1.31 会员狂欢日 (https://lzdz1-isv.isvjcloud.com/dingzhi/majorsuit/memberday/activity?activityId=dz2112100022468201&shareUuid=ca650078f09d43be8d535f36712ab9f2)]
+入口：[ 1.6～1.31 会员狂欢日 (https://lzdz1-isv.isvjcloud.com/dingzhi/majorsuit/memberday/activity?activityId=dz2112100022468201&shareUuid=4a398919d4ff456196f208fff1a5f94e)]
 
 请求太频繁会被黑ip
 过10分钟再执行
