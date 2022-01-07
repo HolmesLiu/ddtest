@@ -41,7 +41,7 @@ let guaopencard_addSku = "true"
 let guaopencard = "true"
 let guaopencard_compositeCard = "true" // 集卡 默认不集卡 需要请设置"true"
 let guaopenwait = "0"
-let guaopencard_draw = "0"
+let guaopencard_draw = "3"
 
 const $ = new Env('1.5~1.25 集“年味卡”，享年货盛宴');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
