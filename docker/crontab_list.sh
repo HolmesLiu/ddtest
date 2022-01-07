@@ -160,29 +160,30 @@
 #年货签到
 14 2,20 * * * node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 
-10 0,7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.js 2>&1
-0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.js 2>&1
-30 6 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.js 2>&1
-1 8 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.js 2>&1
-5 8 * * * node /scripts/jd_dpqd2.js >> /scripts/logs/jd_dpqd2.js 2>&1
-15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.js 2>&1
-26 14 * 7 * node /scripts/jd_jr_draw.js >> /scripts/logs/jd_jr_draw.js 2>&1
-30 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.js 2>&1
-1 6 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.js 2>&1
-2 7 * 12 * node /scripts/jd_gyp.js.js >> /scripts/logs/jd_gyp.js.js 2>&1
-5 0 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.js 2>&1
-1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.js 2>&1
-0 * * * * node /scripts/jd_redrain.js >> /scripts/logs/jd_redrain.js 2>&1
-31 20-23/1 * * * node /scripts/jd_redrain_half.js >> /scripts/logs/jd_redrain_half.js 2>&1
-20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.js 2>&1
+10 0,7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
+0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
+30 6 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
+1 8 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.log 2>&1
+5 8 * * * node /scripts/jd_dpqd2.js >> /scripts/logs/jd_dpqd2.log 2>&1
+15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
+26 14 * 7 * node /scripts/jd_jr_draw.js >> /scripts/logs/jd_jr_draw.log 2>&1
+30 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
+1 6 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
+2 7 * 12 * node /scripts/jd_gyp.js.js >> /scripts/logs/jd_gyp.log 2>&1
+5 0 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
+1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
+0 * * * * node /scripts/jd_redrain.js >> /scripts/logs/jd_redrain.log 2>&1
+31 20-23/1 * * * node /scripts/jd_redrain_half.js >> /scripts/logs/jd_redrain_half.log 2>&1
+20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
 #推推赚钱 放git
-0 0-23/4 * * * node /scripts/jd_tuitui.js >> /scripts/logs/jd_tuitui.js 2>&1
-20 0-23/3 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.js 2>&1
-0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.js 2>&1
+0 0-23/4 * * * node /scripts/jd_tuitui.js >> /scripts/logs/jd_tuitui.log 2>&1
+20 0-23/3 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
+0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.log 2>&1
 
-30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.js 2>&1
-30 1 6-31/2,31 1 * node /scripts/gua_opencard93.js >> /scripts/logs/gua_opencard93.js 2>&1
-30 2 3-9/2 1 * node /scripts/gua_opencard92.js >> /scripts/logs/gua_opencard92.js 2>&1
-10 7 * * * node /scripts/jd_bzlshdgt.js >> /scripts/logs/jd_bzlshdgt.js 2>&1
-30 13 1-31/5,31 1,2 node /scripts/gua_opencard96.js >> /scripts/logs/gua_opencard96.js 2>&1
-10 2,20 * * * node /scripts/jd_fan.js >> /scripts/logs/jd_fan.js 2>&1
+30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.log 2>&1
+30 1 6-31/2,31 1 * node /scripts/gua_opencard93.js >> /scripts/logs/gua_opencard93.log 2>&1
+30 2 3-9/2 1 * node /scripts/gua_opencard92.js >> /scripts/logs/gua_opencard92.log 2>&1
+10 7 * * * node /scripts/jd_bzlshdgt.js >> /scripts/logs/jd_bzlshdgt.log 2>&1
+30 13 1-31/5,31 1,2 node /scripts/gua_opencard96.js >> /scripts/logs/gua_opencard96.log 2>&1
+10 2,20 * * * node /scripts/jd_fan.js >> /scripts/logs/jd_fan.log 2>&1
+0 2 * * * node /scripts/jd_sevenDay.js >> /scripts/logs/jd_sevenDay.log 2>&1
