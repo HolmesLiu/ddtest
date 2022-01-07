@@ -196,6 +196,6 @@
 20 0-23/3 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.js 2>&1
 0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.js 2>&1
 
-#30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.js 2>&1
-#30 1 6-31/2,31 1 * node /scripts/gua_opencard93.js >> /scripts/logs/gua_opencard93.js 2>&1
-#30 2 3-9/2 1 * node /scripts/gua_opencard92.js >> /scripts/logs/gua_opencard92.js 2>&1
+30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.js 2>&1
+30 1 6-31/2,31 1 * node /scripts/gua_opencard93.js >> /scripts/logs/gua_opencard93.js 2>&1
+30 2 3-9/2 1 * node /scripts/gua_opencard92.js >> /scripts/logs/gua_opencard92.js 2>&1
