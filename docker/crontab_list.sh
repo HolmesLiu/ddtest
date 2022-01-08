@@ -187,3 +187,6 @@
 30 13 1-31/5,31 1,2 node /scripts/gua_opencard96.js >> /scripts/logs/gua_opencard96.log 2>&1
 10 2,20 * * * node /scripts/jd_fan.js >> /scripts/logs/jd_fan.log 2>&1
 0 2 * * * node /scripts/jd_sevenDay.js >> /scripts/logs/jd_sevenDay.log 2>&1
+30 2 1,11-31/3 1,2 * node /scripts/gua_opencard95.js >> /scripts/logs/gua_opencard95.log 2>&1
+30 2 28,7-28/3 1 * node /scripts/gua_opencard97.js >> /scripts/logs/gua_opencard97.log 2>&1
+30 10 27,7-27/3 1 * node /scripts/gua_opencard98.js >> /scripts/logs/gua_opencard98.log 2>&1
