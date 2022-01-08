@@ -37,11 +37,11 @@ cron:30 2 1,11-31/3 1,2 *
 30 2 1,11-31/3 1,2 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard95.js, tag=1.5~1.31 年货盛宴 春节集福攻略, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
-let guaopencard_compositeCard = "false" // 集卡 默认不集卡 需要请设置"true"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
+let guaopencard_compositeCard = "true" // 集卡 默认不集卡 需要请设置"true"
 let guaopenwait = "0"
-let guaopencard_draw = "0"
+let guaopencard_draw = "3"
 
 const $ = new Env('1.5~1.31 年货盛宴 春节集福攻略');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
