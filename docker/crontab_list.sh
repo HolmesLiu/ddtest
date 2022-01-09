@@ -157,8 +157,6 @@
 # 清空购物车
 # 0 1 * * * node /scripts/jd_CartRemove.js >> /scripts/logs/jd_CartRemove.log 2>&1
 
-#年货签到
-14 2,20 * * * node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
 
 10 0,7 * * * node /scripts/jd_car.js >> /scripts/logs/jd_car.log 2>&1
 0 0 * * * node /scripts/jd_car_exchange.js >> /scripts/logs/jd_car_exchange.log 2>&1
@@ -192,3 +190,6 @@
 30 10 27,7-27/3 1 * node /scripts/gua_opencard98.js >> /scripts/logs/gua_opencard98.log 2>&1
 30 3 9-15/3 1 * node /scripts/gua_opencard100.js >> /scripts/logs/gua_opencard100.log 2>&1
 30 3 8-15/3 1 * node /scripts/gua_opencard99.js >> /scripts/logs/gua_opencard99.log 2>&1
+30 2 27,9-26/3 1 * node /scripts/gua_opencard101.js >> /scripts/logs/gua_opencard101.log 2>&1
+#年货签到
+0 8 1,2 * * node /scripts/jd_nh_sign.js  >> /scripts/logs/jd_nh_sign.log 2>&1
