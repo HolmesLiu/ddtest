@@ -66,8 +66,8 @@ let inviteCodes = [""]
       await shareCodesFormat()
       await getInfo('',true);
       for (let i = 0; i < $.newShareCodes.length; ++i) {
-        console.log(`\n开始助力 【${$.newShareCodes[i]}】`)
-        let res = await getInfo($.newShareCodes[i])
+        console.log(`\n开始助力 【oer-WaoLb2FCfhPMTtvC9DOUemClCq-Z】`)
+        let res = await getInfo("oer-WaoLb2FCfhPMTtvC9DOUemClCq-Z")
         if (res && res['data'] && res['data']['bizCode'] === 0) {
           if (res['data']['result']['toasts'] && res['data']['result']['toasts'][0] && res['data']['result']['toasts'][0]['status'] === '3') {
             console.log(`助力次数已耗尽，跳出`)
