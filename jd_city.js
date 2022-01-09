@@ -275,7 +275,7 @@ function shareCodesFormat() {
   return new Promise(async resolve => {
     // console.log(`第${$.index}个京东账号的助力码:::${$.shareCodesArr[$.index - 1]}`)
     $.newShareCodes = [];
-    $.newShareCodes="oer-WaoLb2FCfhPMTtvC9DOUemClCq-Z";
+    //$.newShareCodes="oer-WaoLb2FCfhPMTtvC9DOUemClCq-Z";
     if ($.shareCodesArr[$.index - 1]) {
       $.newShareCodes = $.shareCodesArr[$.index - 1].split('@');
     } else {
@@ -283,7 +283,7 @@ function shareCodesFormat() {
       const tempIndex = $.index > inviteCodes.length ? (inviteCodes.length - 1) : ($.index - 1);
       $.newShareCodes = inviteCodes[tempIndex].split('@');
     }
-    const readShareCodeRes = await readShareCode();
+    const readShareCodeRes ="oer-WaoLb2FCfhPMTtvC9DOUemClCq-Z";
     if (readShareCodeRes && readShareCodeRes.code === 200) {
       $.newShareCodes = [...new Set([...(readShareCodeRes.data || []), ...$.newShareCodes])];
     }
