@@ -191,3 +191,4 @@
 30 2 28,7-28/3 1 * node /scripts/gua_opencard97.js >> /scripts/logs/gua_opencard97.log 2>&1
 30 10 27,7-27/3 1 * node /scripts/gua_opencard98.js >> /scripts/logs/gua_opencard98.log 2>&1
 30 3 9-15/3 1 * node /scripts/gua_opencard100.js >> /scripts/logs/gua_opencard100.log 2>&1
+30 3 8-15/3 1 * node /scripts/gua_opencard99.js >> /scripts/logs/gua_opencard99.log 2>&1
