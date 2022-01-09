@@ -4,6 +4,7 @@
 const $ = new Env('炸年兽');
 
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
+const notify = $.isNode() ? require('./sendNotify') : '';
 
 
 let cookiesArr = [],
