@@ -78,6 +78,19 @@
 59 0-23/1 * * * node /scripts/jd_cfd_pearl_ex.js >> /scripts/logs/jd_cfd_pearl_ex.log 2>&1
 # 省钱大赢家翻翻乐2
 20 0,6-23 * * * node /scripts/jd_big_winner.js >> /scripts/logs/jd_big_winner.log 2>&1
+# 城城分现金
+01 * * * * node /scripts/jd_City.js >> /scripts/logs/jd_City.log 2>&1
+# 年货签到
+0 8 * * * node /scripts/jd_nh_sign.js >> /scripts/logs/jd_nh_sign.log 2>&1
+# 见缝插针
+15 10 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
+# 特务z
+23 11,20 * * * node /scripts/jd_superBrand.js >> /scripts/logs/jd_superBrand.log 2>&1
+# 天天压岁钱
+57 2 * * * node /scripts/jd_dayday_ysq.js >> /scripts/logs/jd_dayday_ysq.log 2>&1
+# 京享红包
+0 20,21 * * * node /scripts/jd_redEnvelope_new.js.js >> /scripts/logs/jd_redEnvelope_new.js.log 2>&1
+
 
 ##美丽研究院
 20 7,12,19 * * * node /scripts/jd_beauty.js >> /scripts/logs/jd_beauty.log 2>&1
@@ -163,7 +176,6 @@
 30 6 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 1 8 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.log 2>&1
 5 8 * * * node /scripts/jd_dpqd2.js >> /scripts/logs/jd_dpqd2.log 2>&1
-15 15 * * * node /scripts/jd_jfcz.js >> /scripts/logs/jd_jfcz.log 2>&1
 26 14 * 7 * node /scripts/jd_jr_draw.js >> /scripts/logs/jd_jr_draw.log 2>&1
 30 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 1 6 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
@@ -191,10 +203,7 @@
 30 3 9-15/3 1 * node /scripts/gua_opencard100.js >> /scripts/logs/gua_opencard100.log 2>&1
 30 3 8-15/3 1 * node /scripts/gua_opencard99.js >> /scripts/logs/gua_opencard99.log 2>&1
 30 2 27,9-26/3 1 * node /scripts/gua_opencard101.js >> /scripts/logs/gua_opencard101.log 2>&1
-#年货签到
-0 8 1,2 * * node /scripts/jd_nh_sign.js  >> /scripts/logs/jd_nh_sign.log 2>&1
-#天天压岁钱
-11 11 * * * node /scripts/jd_dayday_ysq.js >> /scripts/logs/jd_dayday_ysq.log 2>&1
+
 #直播间
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #京东汽车
