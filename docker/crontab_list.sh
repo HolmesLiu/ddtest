@@ -193,3 +193,11 @@
 30 2 27,9-26/3 1 * node /scripts/gua_opencard101.js >> /scripts/logs/gua_opencard101.log 2>&1
 #年货签到
 0 8 1,2 * * node /scripts/jd_nh_sign.js  >> /scripts/logs/jd_nh_sign.log 2>&1
+#天天压岁钱
+11 11 * * * node /scripts/jd_dayday_ysq.js >> /scripts/logs/jd_dayday_ysq.log 2>&1
+#直播间
+0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
+#京东汽车
+10 8 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
+10 6,10,12 * * * node /scripts/jd_mpdzcar_game.js >> /scripts/logs/jd_mpdzcar_game.log 2>&1
+10 4 * * *  node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
