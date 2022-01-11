@@ -62,7 +62,7 @@ let nowTime = new Date().getTime() + new Date().getTimezoneOffset()*60*1000 + 8*
     return;
   }
   $.activityId = "cd20220108iu890dmnhimj01ied"
-  $.shareUuid = ""
+  $.shareUuid = "b4122d01b6f649a68053b6539e4b6b91"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
   for (let i = 0; i < cookiesArr.length; i++) {
@@ -245,7 +245,7 @@ async function run() {
     console.log($.actorUuid)
     console.log(`当前助力:${$.shareUuid}`)
     if($.index == 1){
-      $.shareUuid = $.actorUuid
+      $.shareUuid = $.shareUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
     await $.wait(parseInt(Math.random() * 1000 + 5000, 10))
