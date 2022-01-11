@@ -64,6 +64,7 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
     };
     //$.shareCoseList = [...new Set(['l-lmHvKEXaq09aBa9cyhs8auBBrCYzif8_q1-hf9x0Y',...$.shareCoseList])]
   $.shareCoseList = [...new Set([...$.shareCoseList])]
+  console.log(`去助力${$.shareCoseList[0]} ${$.shareCoseList[1]} ${$.shareCoseList[2]}`)
     //去助力与开箱
     for (let i = 0; i < cookiesArr.length; i++) {
         cookie = cookiesArr[i];
