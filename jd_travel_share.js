@@ -277,39 +277,39 @@ async function raise(isFirst = false) {
     // console.log(homeData)
     if (!homeData) return
     const { homeMainInfo: { raiseInfo: { cityConfig: { clockNeedsCoins, points }, remainScore } } } = homeData
-    if (remainScore >= clockNeedsCoins) {
-        if (isFirst) console.log(`\n开始解锁\n`)
-        let curScore = remainScore
-        let flag = false
-        for (const { status, pointName } of points) {
-            if (status === 1) {
-                const res = await doApi("raise", {}, {}, true)
-                if (res) {
-                    if (!flag) flag = true
-                    let arr = [`解锁'${pointName}'成功`]
-                    const { levelUpAward: { awardCoins, canFirstShare, couponInfo, firstShareAwardCoins, redNum } } = res
-                    arr.push(`获得${awardCoins}个爆竹`)
-                    if (couponInfo) {
-                        arr.push(`获得【${couponInfo.name}】优惠券：满${couponInfo.usageThreshold}减${couponInfo.quota}（${couponInfo.desc}）`)
-                    }
-                    if (redNum) {
-                        arr.push(`获得${redNum}份分红`)
-                    }
-                    console.log(arr.join("，"))
-                    if (canFirstShare) {
-                        const WelfareScore = await doApi("getWelfareScore", { type: 1 })
-                        if (WelfareScore?.score) formatMsg(WelfareScore?.score, "分享收益")
-                    }
-                    curScore -= clockNeedsCoins
-                    if (curScore < clockNeedsCoins) return
-                } else {
-                    return
-                }
-            }
-            await $.wait(2000)
-        }
-        if (flag) await raise()
-    }
+    // if (remainScore >= clockNeedsCoins) {
+    //     if (isFirst) console.log(`\n开始解锁\n`)
+    //     let curScore = remainScore
+    //     let flag = false
+    //     for (const { status, pointName } of points) {
+    //         if (status === 1) {
+    //             const res = await doApi("raise", {}, {}, true)
+    //             if (res) {
+    //                 if (!flag) flag = true
+    //                 let arr = [`解锁'${pointName}'成功`]
+    //                 const { levelUpAward: { awardCoins, canFirstShare, couponInfo, firstShareAwardCoins, redNum } } = res
+    //                 arr.push(`获得${awardCoins}个爆竹`)
+    //                 if (couponInfo) {
+    //                     arr.push(`获得【${couponInfo.name}】优惠券：满${couponInfo.usageThreshold}减${couponInfo.quota}（${couponInfo.desc}）`)
+    //                 }
+    //                 if (redNum) {
+    //                     arr.push(`获得${redNum}份分红`)
+    //                 }
+    //                 console.log(arr.join("，"))
+    //                 if (canFirstShare) {
+    //                     const WelfareScore = await doApi("getWelfareScore", { type: 1 })
+    //                     if (WelfareScore?.score) formatMsg(WelfareScore?.score, "分享收益")
+    //                 }
+    //                 curScore -= clockNeedsCoins
+    //                 if (curScore < clockNeedsCoins) return
+    //             } else {
+    //                 return
+    //             }
+    //         }
+    //         await $.wait(2000)
+    //     }
+    //     if (flag) await raise()
+    // }
 }
 
 async function doAppTask() {
