@@ -83,7 +83,14 @@ if ($.isNode()) {
     await $.wait(1000)
     res2 = await getAuthorShareCode('https://raw.fastgit.org/888888/updateTeam/main/shareCodes/wish.json')
   }
-  $.shareCode = [...$.shareCode, ...(res || []), ...(res2 || [])]
+  //$.shareCode = [...$.shareCode, ...(res || []), ...(res2 || [])]
+  $.shareCode = [...$.shareCode]
+  console.log(`助力码0 ${$.shareCode[0].use} 的助力码 ${$.shareCode[0].code} appid ${$.shareCode[0].appId}\n`)
+  console.log(`助力码1 ${$.shareCode[1].use} 的助力码 ${$.shareCode[1].code} appid ${$.shareCode[1].appId}\n`)
+  console.log(`助力码0 ${$.shareCode[2].use} 的助力码 ${$.shareCode[2].code} appid ${$.shareCode[2].appId}\n`)
+  console.log(`助力码0 ${$.shareCode[3].use} 的助力码 ${$.shareCode[3].code} appid ${$.shareCode[3].appId}\n`)
+  console.log(`助力码0 ${$.shareCode[4].use} 的助力码 ${$.shareCode[4].code} appid ${$.shareCode[4].appId}\n`)
+  console.log(`助力码0 ${$.shareCode[5].use} 的助力码 ${$.shareCode[5].code} appid ${$.shareCode[5].appId}\n`)
   for (let i = 0; i < cookiesArr.length; i++) {
     if (cookiesArr[i]) {
       cookie = cookiesArr[i];
