@@ -25,7 +25,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 //IOS等用户直接用NobyDa的jd cookie
 let cookiesArr = [], cookie = '', secretp = '', joyToken = "";
 $.shareCoseList = [];
-$.shareCoseList.push("l-lmHvKEXaq09aBa9cyhs8auBBrCYzif8_q1-hf9x0Y")
+//$.shareCoseList.push({"l-lmHvKEXaq09aBa9cyhs8auBBrCYzif8_q1-hf9x0Y"})
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -62,8 +62,8 @@ const JD_API_HOST = `https://api.m.jd.com/client.action`;
       await main()
     }
     };
-    //$.shareCoseList = [...new Set(['l-lmHvKEXaq09aBa9cyhs8auBBrCYzif8_q1-hf9x0Y',...$.shareCoseList])]
-  $.shareCoseList = [...new Set([...$.shareCoseList])]
+   $.shareCoseList = [...new Set(['l-lmHvKEXaq09aBa9cyhs8auBBrCYzif8_q1-hf9x0Y',...$.shareCoseList])]
+  //$.shareCoseList = [...new Set([...$.shareCoseList])]
   console.log(`去助力${$.shareCoseList[0]} ${$.shareCoseList[1]} ${$.shareCoseList[2]}`)
     //去助力与开箱
     for (let i = 0; i < cookiesArr.length; i++) {
