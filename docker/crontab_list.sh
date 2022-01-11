@@ -188,19 +188,22 @@
 20 0-23/3 * * * node /scripts/jd_jdtj_winner.js >> /scripts/logs/jd_jdtj_winner.log 2>&1
 0 0,22 * * * node /scripts/dpsign.js >> /scripts/logs/dpsign.log 2>&1
 
-30 1 5-25/2,26 1 * node /scripts/gua_opencard94.js >> /scripts/logs/gua_opencard94.log 2>&1
-30 1 6-31/2,31 1 * node /scripts/gua_opencard93.js >> /scripts/logs/gua_opencard93.log 2>&1
-30 2 3-9/2 1 * node /scripts/gua_opencard92.js >> /scripts/logs/gua_opencard92.log 2>&1
-10 7 * * * node /scripts/jd_bzlshdgt.js >> /scripts/logs/jd_bzlshdgt.log 2>&1
-30 13 1-31/5,31 1,2 node /scripts/gua_opencard96.js >> /scripts/logs/gua_opencard96.log 2>&1
 10 2,20 * * * node /scripts/jd_fan.js >> /scripts/logs/jd_fan.log 2>&1
 0 2 * * * node /scripts/jd_sevenDay.js >> /scripts/logs/jd_sevenDay.log 2>&1
-30 2 1,11-31/3 1,2 * node /scripts/gua_opencard95.js >> /scripts/logs/gua_opencard95.log 2>&1
-30 2 28,7-28/3 1 * node /scripts/gua_opencard97.js >> /scripts/logs/gua_opencard97.log 2>&1
-30 10 27,7-27/3 1 * node /scripts/gua_opencard98.js >> /scripts/logs/gua_opencard98.log 2>&1
-30 3 9-15/3 1 * node /scripts/gua_opencard100.js >> /scripts/logs/gua_opencard100.log 2>&1
-30 3 8-15/3 1 * node /scripts/gua_opencard99.js >> /scripts/logs/gua_opencard99.log 2>&1
-30 2 27,9-26/3 1 * node /scripts/gua_opencard101.js >> /scripts/logs/gua_opencard101.log 2>&1
+10 7 * * * node /scripts/jd_bzlshdgt.js >> /scripts/logs/jd_bzlshdgt.log 2>&1
+
+
+#开卡脚本
+30 2 3-9/2 1 * node /scripts/jd_gua_opencard92.js >> /scripts/logs/jd_gua_opencard92.log 2>&1
+30 1 6-31/2,31 1 * node /scripts/jd_gua_opencard93.js >> /scripts/logs/jd_gua_opencard93.log 2>&1
+30 1 5-25/2,26 1 * node /scripts/jd_gua_opencard94.js >> /scripts/logs/jd_gua_opencard94.log 2>&1
+30 2 1,11-31/3 1,2 * node /scripts/jd_gua_opencard95.js >> /scripts/logs/jd_gua_opencard95.log 2>&1
+30 13 1-31/5,31 1,2 node /scripts/jd_gua_opencard96.js >> /scripts/logs/jd_gua_opencard96.log 2>&1
+30 2 28,7-28/3 1 * node /scripts/jd_gua_opencard97.js >> /scripts/logs/jd_gua_opencard97.log 2>&1
+30 10 27,7-27/3 1 * node /scripts/jd_gua_opencard98.js >> /scripts/logs/jd_gua_opencard98.log 2>&1
+30 3 8-15/3 1 * node /scripts/jd_gua_opencard99.js >> /scripts/logs/jd_gua_opencard99.log 2>&1
+30 3 9-15/3 1 * node /scripts/jd_gua_opencard100.js >> /scripts/logs/jd_gua_opencard100.log 2>&1
+30 2 27,9-26/3 1 * node /scripts/jd_gua_opencard101.js >> /scripts/logs/jd_gua_opencard101.log 2>&1
 
 #直播间
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
