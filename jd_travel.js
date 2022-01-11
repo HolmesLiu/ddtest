@@ -107,7 +107,7 @@ const { getAppCookie } = (() => {
         $.blog_joyytoken = s.blog_joyytoken
         $.secretp = s.secretp
         if (helpFlag) {
-            $.newHelpCodeArr = [...("ZXASTT022v_92QBge_FHWPRv8kPcNdwFjRWn6W7zB55awQ"),...helpCodeArr]
+            $.newHelpCodeArr = [...helpCodeArr]
             for (let i = 0, codeLen = helpCodeArr.length; i < codeLen; i++) {
                 const helpCode = helpCodeArr[i]
                 const { pin, code } = helpCode
