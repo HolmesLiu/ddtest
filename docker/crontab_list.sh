@@ -213,3 +213,8 @@
 10 4 * * *  node /scripts/jd_mpdzcar_help.js >> /scripts/logs/jd_mpdzcar_help.log 2>&1
 
 40 0,2,12 * * * node /scripts/jd_wish.js >> /scripts/logs/jd_wish.log 2>&1
+
+30 8 27,7-27/3 1 * node /scripts/jd_opencardLH40.js >> /scripts/logs/jd_opencardLH40.log 2>&1
+30 1 28,7-28/3 1 * node /scripts/jd_opencardLH41.js >> /scripts/logs/jd_opencardLH41.log 2>&1
+30 6 27,9-26/3 1 * node /scripts/jd_opencardLH43.js >> /scripts/logs/jd_opencardLH43.log 2>&1
+30 1 9-15/3 1 * node /scripts/jd_opencardLH44.js >> /scripts/logs/jd_opencardLH44.log 2>&1
