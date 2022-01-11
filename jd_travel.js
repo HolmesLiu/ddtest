@@ -78,7 +78,7 @@ const { getAppCookie } = (() => {
             $.joyytoken = await getToken()
             $.blog_joyytoken = await getToken("50999", "4")
             cookie = $.ZooFaker.getCookie(cookie + `joyytoken=${appid}${$.joyytoken};`)
-            await travel()
+           // await travel()
             helpSysInfoArr.push({
                 cookie,
                 pin: $.UserName,
