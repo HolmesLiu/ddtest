@@ -29,6 +29,21 @@ let appIdArr = ['1FFVQyqw', "1GVFUx6g", "1E1xZy6s", "1GVJWyqg","1GFRRyqo"];
 let appNameArr = ['1111点心动', "JOY年尾之旅","PLUS生活特权", "虎娃迎福","过新潮年"];
 let appId, appName;
 $.shareCode = [];
+$.shareCode.push({
+  "code": "T022v_92QBge_FHWPRv8kPcNdwAzBTm6u7zDYjeQOc",
+  "appId": "1GVFUx6g",
+  "use": "125067951-184073"
+})
+$.shareCode.push({
+  "code": "T022v_92QBge_FHWPRv8kPcNdwAzNRlqu7yx55awQ",
+  "appId": "1GVJWyqg",
+  "use": "125067951-184073"
+})
+$.shareCode.push({
+  "code": "T022v_92QBge_FHWPRv8kPcNdwAjVWlqm7zB55awQ",
+  "appId": "1GFRRyqo",
+  "use": "125067951-184073"
+})
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
@@ -84,7 +99,9 @@ if ($.isNode()) {
     res2 = await getAuthorShareCode('https://raw.fastgit.org/888888/updateTeam/main/shareCodes/wish.json')
   }
   //$.shareCode = [...$.shareCode, ...(res || []), ...(res2 || [])]
+
   $.shareCode = [...$.shareCode]
+  console.log(`助力码 ${$.shareCode} \n`)
   console.log(`助力码0 ${$.shareCode[0].use} 的助力码 ${$.shareCode[0].code} appid ${$.shareCode[0].appId}\n`)
   console.log(`助力码1 ${$.shareCode[1].use} 的助力码 ${$.shareCode[1].code} appid ${$.shareCode[1].appId}\n`)
   console.log(`助力码0 ${$.shareCode[2].use} 的助力码 ${$.shareCode[2].code} appid ${$.shareCode[2].appId}\n`)
