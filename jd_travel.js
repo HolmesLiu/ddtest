@@ -6,9 +6,9 @@ TG https://t.me/aaron_scriptsG
 const $ = new Env('炸年兽');
 const notify = $.isNode() ? require('./sendNotify') : '';
 //Node.js用户请在jdCookie.js处填写京东ck;
-let cookiesArr = [], cookie = '', message, helpCodeArr = [], expandHelpArr = [], helpPinArr = [], wxCookie = "";
+let cookiesArr = [], cookie = '', message, helpCodeArr = [], expandHelpArr = [],teamLeaderArr = [], helpPinArr = [], wxCookie = "";
 let wxCookieArr = process.env.WXCookie?.split("@") || []
-const teamLeaderArr = [], teamPlayerAutoTeam = {}
+const teamPlayerAutoTeam = {}
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 const appid = $.appid = "50089"
 let teamMap = {}
@@ -37,12 +37,14 @@ const pkTeamNum = () => Math.ceil(cookiesArr.length / 30)
         $.msg($.name, '【提示】请先获取京东账号一cookie\n直接使用NobyDa的京东签到获取', 'https://bean.m.jd.com/bean/signIndex.action', { "open-url": "https://bean.m.jd.com/bean/signIndex.action" });
         return;
     }
+    readShareCodeRes = await getAuthorShareCode('https://gitee.com/linshi999/test/raw/master/nianshou.json')
     console.log(`
 【温馨提示】
 默认膨胀时间：22时， 默认开启膨胀红包时间：23时
 如不需要自动膨胀请设置环境变量 JD_TRAVEL_EXPAND=-1
 如需自动膨胀请注意设置好corn时间差，如22:00，23:00运行则刚好错过膨胀红包，22:30,23:00运行则助力基本可以成功
 `)
+    await shareCodesFormat();
     const helpSysInfoArr = []
     for (let i = 0; i < cookiesArr.length; i++) {
         if (cookiesArr[i]) {
@@ -703,6 +705,18 @@ function mohuReadJson(json, key, len, keyName) {
     return null
 }
 
+//格式化助力码
+function shareCodesFormat() {
+    return new Promise(async resolve => {
+      if (readShareCodeRes && readShareCodeRes.code === 200) {
+        helpCodeArr = readShareCodeRes.coin;
+        expandHelpArr = readShareCodeRes.red;
+        teamLeaderArr = readShareCodeRes.team;
+      }
+      resolve();
+    })
+  }
+
 function formatMsg(num, pre, ap) {
     console.log(`${pre ? pre + "：" : ""}获得${num}个爆竹🧨${ap ? "，" + ap : ""}`)
 }
@@ -1170,6 +1184,39 @@ function randomString(min, max = 0) {
     }
     return str;
 }
+
+function getAuthorShareCode(url) {
+    return new Promise(async resolve => {
+      const options = {
+        url: `${url}`, "timeout": 10000, headers: {
+          "User-Agent": "Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1 Edg/87.0.4280.88"
+        }
+      };
+      if ($.isNode() && process.env.TG_PROXY_HOST && process.env.TG_PROXY_PORT) {
+        const tunnel = require("tunnel");
+        const agent = {
+          https: tunnel.httpsOverHttp({
+            proxy: {
+              host: process.env.TG_PROXY_HOST,
+              port: process.env.TG_PROXY_PORT * 1
+            }
+          })
+        }
+        Object.assign(options, { agent })
+      }
+      $.get(options, async (err, resp, data) => {
+        try {
+          resolve(JSON.parse(data))
+        } catch (e) {
+          // $.logErr(e, resp)
+        } finally {
+          resolve();
+        }
+      })
+      await $.wait(10000)
+      resolve();
+    })
+  }
 
 function TotalBean() {
     return new Promise(async resolve => {
