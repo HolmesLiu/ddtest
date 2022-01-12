@@ -218,3 +218,6 @@
 30 1 28,7-28/3 1 * node /scripts/jd_opencardLH41.js >> /scripts/logs/jd_opencardLH41.log 2>&1
 30 6 27,9-26/3 1 * node /scripts/jd_opencardLH43.js >> /scripts/logs/jd_opencardLH43.log 2>&1
 30 1 9-15/3 1 * node /scripts/jd_opencardLH44.js >> /scripts/logs/jd_opencardLH44.log 2>&1
+
+#炸年兽
+0 11 * * * node /scripts/jd_zns_help.js >> /scripts/logs/jd_zns_help.log 2>&1
