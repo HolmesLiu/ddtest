@@ -175,6 +175,7 @@
 30 6 * * * node /scripts/jd_ddnc_farmpark.js >> /scripts/logs/jd_ddnc_farmpark.log 2>&1
 1 8 * * * node /scripts/jd_dpqd.js >> /scripts/logs/jd_dpqd.log 2>&1
 5 8 * * * node /scripts/jd_dpqd2.js >> /scripts/logs/jd_dpqd2.log 2>&1
+15 2,14 * * * node /scripts/jd_dpqd_diy.js >> /scripts/logs/jd_dpqd_diy.log 2>&1
 30 7,16 * * * node /scripts/jd_medal.js >> /scripts/logs/jd_medal.log 2>&1
 1 6 * * * node /scripts/jd_gold_sign.js >> /scripts/logs/jd_gold_sign.log 2>&1
 2 7 * 12 * node /scripts/jd_gyp.js.js >> /scripts/logs/jd_gyp.log 2>&1
@@ -220,7 +221,9 @@
 30 1 28,7-28/3 1 * node /scripts/jd_opencardLH41.js >> /scripts/logs/jd_opencardLH41.log 2>&1
 30 6 27,9-26/3 1 * node /scripts/jd_opencardLH43.js >> /scripts/logs/jd_opencardLH43.log 2>&1
 30 1 9-15/3 1 * node /scripts/jd_opencardLH44.js >> /scripts/logs/jd_opencardLH44.log 2>&1
+30 8,22 12-20 1 * node /scripts/jd_opencardLH46.js >> /scripts/logs/jd_opencardLH46.log 2>&1
+6 6,16 13-18 1 * node /scripts/jd_opencardLH47.js >> /scripts/logs/jd_opencardLH47.log 2>&1
 
 #炸年兽
-0 11 * * * node /scripts/jd_zns_help.js >> /scripts/logs/jd_zns_help.log 2>&1
-11 23 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
+#0 11 * * * node /scripts/jd_zns_help.js >> /scripts/logs/jd_zns_help.log 2>&1
+#11 23 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
