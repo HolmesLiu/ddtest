@@ -210,6 +210,7 @@
 20 0 6-14 1 * node /scripts/jd_gua_opencard104.js >> /scripts/logs/jd_gua_opencard104.log 2>&1
 30 4 6-20/3 1 * node /scripts/jd_gua_opencard105.js >> /scripts/logs/jd_gua_opencard105.log 2>&1
 30 4 14-21/3 1 * node /scripts/jd_gua_opencard106.js >> /scripts/logs/jd_gua_opencard106.log 2>&1
+30 4 16-21/3,21 1 * node /scripts/jd_gua_opencard107.js >> /scripts/logs/jd_gua_opencard107.log 2>&1
 
 #直播间
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
@@ -234,3 +235,5 @@
 20 10,23 * * * node /scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
 #白条抽奖
 10 9 13-31,1-7 1,2 * node /scripts/jd_bt_sign.js >> /scripts/logs/jd_bt_sign.log 2>&1
+#风生水起
+30 17 6-31 1 * node /scripts/jd_xyhy.js >> /scripts/logs/jd_xyhy.log 2>&1
