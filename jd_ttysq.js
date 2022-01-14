@@ -56,6 +56,10 @@ const JD_API_HOST = `https://m.jingxi.com`;
         }
     }
     console.log(`要助力的助理码${JSON.stringify($.shareCoseList.length)}个\n`)
+
+    console.log(`助理码0 User${$.shareCoseList[0].UserName}，code${$.shareCoseList[0].shareId}，redId${$.shareCoseList[0].redId}，helpId${$.shareCoseList[0].taskId}\n`)
+
+
     //助力任务
     for (let i = 0; i < cookiesArr.length; i++) {
         $.canHelp = true
