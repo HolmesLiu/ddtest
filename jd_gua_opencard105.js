@@ -100,7 +100,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "dz220106100001616201Union"
-  $.shareUuid = ""
+  $.shareUuid = "8d74d06af9f54f3ab08a37f47b97e59f"
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/index/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
   //let shareUuidArr = [$.shareUuid,"f76b0dcd728548dc8c7bb60dba272f2d"]
   let s = Math.floor((Math.random()*10))
@@ -261,7 +261,7 @@ async function run() {
     console.log($.actorUuid)
     console.log(`当前助力:${$.shareUuid}`)
     if($.index == 1){
-      $.shareUuid = $.actorUuid
+      $.shareUuid = $.shareUuid
       console.log(`后面的号都会助力:${$.shareUuid}`)
     }
     await $.wait(parseInt(Math.random() * 1000 + 5000, 10))

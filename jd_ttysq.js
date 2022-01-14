@@ -55,26 +55,6 @@ const JD_API_HOST = `https://m.jingxi.com`;
             await main()
         }
     }
-    let res = await getAuthorShareCode('https://raw.githubusercontent.com/555555/updateTeam/main/shareCodes/ttysq.json')
-    if (!res) {
-        res = await getAuthorShareCode('https://raw.fastgit.org/555555/updateTeam/main/shareCodes/ttysq.json')
-    }
-    if (res) {
-        authorCode = res.sort(() => 0.5 - Math.random())
-        if (authorCode.length > 3) {
-            authorCode = authorCode.splice(0, 3)
-        }
-        authorCode = authorCode.map(code => {
-            return {
-                "user": "author",
-                "code": code,
-                "redId": Math.floor(1 + Math.random() * 10),
-                "beHelp": 0,
-                "helpId": $.taskId
-            }
-        })
-        $.shareCoseList = [...$.shareCoseList, ...authorCode]
-    }
     console.log(`要助力的助理码${JSON.stringify($.shareCoseList.length)}个\n`)
     //助力任务
     for (let i = 0; i < cookiesArr.length; i++) {
