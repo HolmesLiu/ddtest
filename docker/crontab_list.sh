@@ -228,3 +228,5 @@
 #炸年兽
 #0 11 * * * node /scripts/jd_zns_help.js >> /scripts/logs/jd_zns_help.log 2>&1
 #11 23 * * * node /scripts/jd_travel.js >> /scripts/logs/jd_travel.log 2>&1
+#天天压岁钱
+50 0,16 * * * node /scripts/jd_ttysq.js >> /scripts/logs/jd_ttysq.log 2>&1
