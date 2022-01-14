@@ -31,10 +31,10 @@ cron:30 4 16-21/3,21 1 *
 30 4 16-21/3,21 1 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard107.js, tag=1.14~1.20 大牌会员日, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
 let guaopenwait = "0"
-let guaopencard_draw = "0"
+let guaopencard_draw = "3"
 
 const $ = new Env('1.14~1.20 大牌会员日');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
