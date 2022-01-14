@@ -19,6 +19,13 @@ let cookiesArr = [],
     secretp = '',
     joyToken = "";
 $.shareCoseList = [];
+$.shareCoseList.push({
+    "user": "125067951-184073",
+    "code": "5fdd0be1",
+    "redId": "5",
+    "beHelp": 0,
+    "helpId": "3142"
+})
 if ($.isNode()) {
     Object.keys(jdCookieNode).forEach((item) => {
         cookiesArr.push(jdCookieNode[item])
@@ -56,9 +63,6 @@ const JD_API_HOST = `https://m.jingxi.com`;
         }
     }
     console.log(`要助力的助理码${JSON.stringify($.shareCoseList.length)}个\n`)
-
-    console.log(`助理码0 User${$.shareCoseList[0].user}，code${$.shareCoseList[0].code}，redId${$.shareCoseList[0].redId}，helpId${$.shareCoseList[0].helpId}\n`)
-
     //助力任务
     for (let i = 0; i < cookiesArr.length; i++) {
         $.canHelp = true
