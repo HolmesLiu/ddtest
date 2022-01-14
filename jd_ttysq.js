@@ -29,7 +29,7 @@ const JD_API_HOST = `https://m.jingxi.com`;
   $.CryptoJS = $.isNode() ? require('crypto-js') : CryptoJS
   //做任务
   console.log(`CK1 助力作者！CK1 助力作者！CK1 助力作者！`)
-  let res = await getAuthorShareCode('https://gitee.com/444444521/JD-Scripts/raw/master/shareCodes/ttysq.json')
+ // let res = await getAuthorShareCode('https://gitee.com/444444521/JD-Scripts/raw/master/shareCodes/ttysq.json')
   for (let i = 0; i < cookiesArr.length; i++) {
     cookie = cookiesArr[i];
     if (cookie) {

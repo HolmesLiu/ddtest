@@ -207,6 +207,7 @@
 30 2 27,9-26/3 1 * node /scripts/jd_gua_opencard101.js >> /scripts/logs/jd_gua_opencard101.log 2>&1
 30 3 13-20/3 1 * node /scripts/jd_gua_opencard102.js >> /scripts/logs/jd_gua_opencard102.log 2>&1
 30 3 13-18/3 1 * node /scripts/jd_gua_opencard103.js >> /scripts/logs/jd_gua_opencard103.log 2>&1
+20 0 6-14 1 * node /scripts/jd_gua_opencard103.js >> /scripts/logs/jd_gua_opencard104.log 2>&1
 
 #直播间
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
