@@ -239,3 +239,5 @@
 30 17 6-31 1 * node /scripts/jd_xyhy.js >> /scripts/logs/jd_xyhy.log 2>&1
 #通天塔签到共建
 3 0,3 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
+#萌虎摇摇乐
+0 0,12,18 * * * node /scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
