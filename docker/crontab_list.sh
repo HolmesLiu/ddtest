@@ -202,12 +202,9 @@
 30 13 1-31/5,31 1,2 node /scripts/jd_gua_opencard96.js >> /scripts/logs/jd_gua_opencard96.log 2>&1
 30 2 28,7-28/3 1 * node /scripts/jd_gua_opencard97.js >> /scripts/logs/jd_gua_opencard97.log 2>&1
 30 10 27,7-27/3 1 * node /scripts/jd_gua_opencard98.js >> /scripts/logs/jd_gua_opencard98.log 2>&1
-30 3 8-15/3 1 * node /scripts/jd_gua_opencard99.js >> /scripts/logs/jd_gua_opencard99.log 2>&1
-30 3 9-15/3 1 * node /scripts/jd_gua_opencard100.js >> /scripts/logs/jd_gua_opencard100.log 2>&1
 30 2 27,9-26/3 1 * node /scripts/jd_gua_opencard101.js >> /scripts/logs/jd_gua_opencard101.log 2>&1
 30 3 13-20/3 1 * node /scripts/jd_gua_opencard102.js >> /scripts/logs/jd_gua_opencard102.log 2>&1
 30 3 13-18/3 1 * node /scripts/jd_gua_opencard103.js >> /scripts/logs/jd_gua_opencard103.log 2>&1
-20 0 6-14 1 * node /scripts/jd_gua_opencard104.js >> /scripts/logs/jd_gua_opencard104.log 2>&1
 30 4 6-20/3 1 * node /scripts/jd_gua_opencard105.js >> /scripts/logs/jd_gua_opencard105.log 2>&1
 30 4 14-21/3 1 * node /scripts/jd_gua_opencard106.js >> /scripts/logs/jd_gua_opencard106.log 2>&1
 30 4 16-21/3,21 1 * node /scripts/jd_gua_opencard107.js >> /scripts/logs/jd_gua_opencard107.log 2>&1
@@ -241,3 +238,4 @@
 3 0,3 * * * node /scripts/jd_babel_sign.js >> /scripts/logs/jd_babel_sign.log 2>&1
 #萌虎摇摇乐
 0 0,12,18 * * * node /scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
+0 0,18 * * * node /scripts/jd_tiger_help.js >> /scripts/logs/jd_tiger_help.log 2>&1
