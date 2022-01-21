@@ -203,12 +203,10 @@
 30 2 28,7-28/3 1 * node /scripts/jd_gua_opencard97.js >> /scripts/logs/jd_gua_opencard97.log 2>&1
 30 10 27,7-27/3 1 * node /scripts/jd_gua_opencard98.js >> /scripts/logs/jd_gua_opencard98.log 2>&1
 30 2 27,9-26/3 1 * node /scripts/jd_gua_opencard101.js >> /scripts/logs/jd_gua_opencard101.log 2>&1
-30 3 13-20/3 1 * node /scripts/jd_gua_opencard102.js >> /scripts/logs/jd_gua_opencard102.log 2>&1
-30 3 13-18/3 1 * node /scripts/jd_gua_opencard103.js >> /scripts/logs/jd_gua_opencard103.log 2>&1
-30 4 6-20/3 1 * node /scripts/jd_gua_opencard105.js >> /scripts/logs/jd_gua_opencard105.log 2>&1
 30 4 14-21/3 1 * node /scripts/jd_gua_opencard106.js >> /scripts/logs/jd_gua_opencard106.log 2>&1
 30 4 16-21/3,21 1 * node /scripts/jd_gua_opencard107.js >> /scripts/logs/jd_gua_opencard107.log 2>&1
 30 3 18-24/3 1 * * node /scripts/jd_gua_opencard108.js >> /scripts/logs/jd_gua_opencard108.log 2>&1
+30 3 19-28/3 1 * node /scripts/jd_gua_opencard110.js >> /scripts/logs/jd_gua_opencard110.log 2>&1
 #直播间
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #京东汽车
@@ -224,6 +222,8 @@
 30 1 9-15/3 1 * node /scripts/jd_opencardLH44.js >> /scripts/logs/jd_opencardLH44.log 2>&1
 30 8,22 12-20 1 * node /scripts/jd_opencardLH46.js >> /scripts/logs/jd_opencardLH46.log 2>&1
 6 6,16 13-18 1 * node /scripts/jd_opencardLH47.js >> /scripts/logs/jd_opencardLH47.log 2>&1
+21 0,12 21-29 1 * node /scripts/jd_kk_opencardL66.js >> /scripts/logs/jd_kk_opencardL66.log 2>&1
+
 
 #炸年兽
 #0 11 * * * node /scripts/jd_zns_help.js >> /scripts/logs/jd_zns_help.log 2>&1
