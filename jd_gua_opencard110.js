@@ -38,8 +38,8 @@ cron:30 3 19-28/3 1 *
 30 3 19-28/3 1 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard110.js, tag=1.21~1.28 年货不打烊 好物带回家, enabled=true
 
 */
-let guaopencard_addSku = "ture"
-let guaopencard = "ture"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
 let guaopenwait = "0"
 let guaopencard_draw = "3"
 
