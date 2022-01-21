@@ -239,3 +239,5 @@
 #萌虎摇摇乐
 0 0,12,18 * * * node /scripts/jd_tiger.js >> /scripts/logs/jd_tiger.log 2>&1
 0 0,18 * * * node /scripts/jd_tiger_help.js >> /scripts/logs/jd_tiger_help.log 2>&1
+#点鞭炮赢京豆
+50 1 * * * node /scripts/jd_festival.js >> /scripts/logs/jd_festival.log 2>&1
