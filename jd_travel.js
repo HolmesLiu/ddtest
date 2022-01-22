@@ -1,6 +1,9 @@
-
 /*
-被内鬼偷给柠檬了,大家一起玩吧
+TG https://t.me/aaron_scriptsG
+
+CK1自动组队 加密部分为h5st 不偷助力！！！
+
+
 33 0,6-23/2 * * * jd_travel.js
 */
 const $ = new Env('炸年兽');
