@@ -35,10 +35,10 @@ cron:30 4 21-27/3 1 *
 30 4 21-27/3 1 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard111.js, tag=1.21～1.27 南北年货 新意回家, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
 let guaopenwait = "0"
-let guaopencard_draw = "0"
+let guaopencard_draw = "3"
 
 const $ = new Env('1.21～1.27 南北年货 新意回家');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -98,7 +98,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "dzlhkkpoutnkskl20220121"
-  $.shareUuid = "26e45e2f7eb84387b3c045699e16612d"
+  $.shareUuid = ""
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/customized/common/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
   for (let i = 0; i < cookiesArr.length; i++) {

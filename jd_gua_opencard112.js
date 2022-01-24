@@ -35,9 +35,9 @@ cron:30 4 1-15/3,17-31/3 1,2 *
 30 4 1-15/3,17-31/3 1,2 * https://raw.githubusercontent.com/11111120/scripts/master/gua_opencard112.js, tag=1.17～2.15 品质女装 年终狂欢, enabled=true
 
 */
-let guaopencard_addSku = "false"
-let guaopencard = "false"
-let guaopenwait = "0"
+let guaopencard_addSku = "true"
+let guaopencard = "true"
+let guaopenwait = "3"
 
 const $ = new Env('1.17～2.15 品质女装 年终狂欢');
 const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
@@ -95,7 +95,7 @@ let activityCookie =''
     return;
   }
   $.activityId = "67ba2ad44b8041c9925bf0e72febbdb2"
-  $.shareUuid = "571baca3aed440ba9aee0317c1ada7a4"
+  $.shareUuid = ""
   console.log(`入口:\nhttps://lzdz1-isv.isvjcloud.com/dingzhi/dz/openCard/activity?activityId=${$.activityId}&shareUuid=${$.shareUuid}`)
 
 
