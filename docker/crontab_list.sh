@@ -207,6 +207,9 @@
 30 4 16-21/3,21 1 * node /scripts/jd_gua_opencard107.js >> /scripts/logs/jd_gua_opencard107.log 2>&1
 30 3 18-24/3 1 * * node /scripts/jd_gua_opencard108.js >> /scripts/logs/jd_gua_opencard108.log 2>&1
 30 3 19-28/3 1 * node /scripts/jd_gua_opencard110.js >> /scripts/logs/jd_gua_opencard110.log 2>&1
+30 4 21-27/3 1 * node /scripts/jd_gua_opencard111.js >> /scripts/logs/jd_gua_opencard111.log 2>&1
+30 4 1-15/3,17-31/3 1,2 * node /scripts/jd_gua_opencard112.js >> /scripts/logs/jd_gua_opencard112.log 2>&1
+
 #直播间
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #京东汽车
