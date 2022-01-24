@@ -36,6 +36,7 @@ const jdCookieNode = $.isNode() ? require('./jdCookie.js') : '';
 let cookiesArr = [], cookie = '', message;
 let UA, UAInfo = {}, isLoginInfo = {};
 $.shareCodes = [];
+
 $.blackInfo = {}
 const JX_FIRST_RUNTASK = $.isNode() ? (process.env.JX_FIRST_RUNTASK && process.env.JX_FIRST_RUNTASK === 'xd' ? '5' : '1000') : ($.getdata('JX_FIRST_RUNTASK') && $.getdata('JX_FIRST_RUNTASK') === 'xd' ? '5' : '1000')
 if ($.isNode()) {
@@ -154,6 +155,8 @@ async function main(help = true) {
     if ($.canHelp) {
       if ($.shareCodes && $.shareCodes.length) {
         console.log(`\n开始内部互助\n`)
+        console.log(`\n${$.shareCodes[0].use} ，${$.shareCodes[0].smp}，${$.shareCodes[0].num}，${$.shareCodes[0].max}，${$.shareCodes[0].domax}\n`)
+
         for (let j = 0; j < $.shareCodes.length; j++) {
           if ($.shareCodes[j].num == $.shareCodes[j].domax) {
             $.shareCodes.splice(j, 1)
