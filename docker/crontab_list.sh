@@ -181,8 +181,7 @@
 2 7 * 12 * node /scripts/jd_gyp.js.js >> /scripts/logs/jd_gyp.log 2>&1
 5 0 * * * node /scripts/jd_lotteryMachine.js >> /scripts/logs/jd_lotteryMachine.log 2>&1
 1 0,19,23 * * * node /scripts/jd_nnfls.js >> /scripts/logs/jd_nnfls.log 2>&1
-0 * * * * node /scripts/jd_redrain.js >> /scripts/logs/jd_redrain.log 2>&1
-31 20-23/1 * * * node /scripts/jd_redrain_half.js >> /scripts/logs/jd_redrain_half.log 2>&1
+
 20 0,16 * * * node /scripts/jd_ttpt.js >> /scripts/logs/jd_ttpt.log 2>&1
 #推推赚钱 放git
 0 0-23/4 * * * node /scripts/jd_tuitui.js >> /scripts/logs/jd_tuitui.log 2>&1
@@ -210,7 +209,9 @@
 30 4 21-27/3 1 * node /scripts/jd_gua_opencard111.js >> /scripts/logs/jd_gua_opencard111.log 2>&1
 30 4 1-15/3,17-31/3 1,2 * node /scripts/jd_gua_opencard112.js >> /scripts/logs/jd_gua_opencard112.log 2>&1
 
-#直播间
+#红包雨
+0 * * * * node /scripts/jd_redrain.js >> /scripts/logs/jd_redrain.log 2>&1
+31 20-23/1 * * * node /scripts/jd_redrain_half.js >> /scripts/logs/jd_redrain_half.log 2>&1
 0,30 0-23/1 * * * node /scripts/jd_live_redrain.js >> /scripts/logs/jd_live_redrain.log 2>&1
 #京东汽车
 10 8 * * * node /scripts/jd_mpdzcar.js >> /scripts/logs/jd_mpdzcar.log 2>&1
