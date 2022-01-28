@@ -33,7 +33,7 @@ const JD_API_HOST = 'https://api.m.jd.com/client.action';
     }
 
     $.shareCodesArr = [];
-    $.shareCodesArr.push("ZXASTT022v_92QBge_FHWPRv8kPcNdwFjRWn6W7zB55awQ")
+    $.shareCodesArr.push("KOIASTT022v_92QBge_FHWPRv8kPcNdwCTdWmoaR5kRrbA")
     
     for (let i = 0; i < 1; i++) {
         if (cookiesArr[i]) {
@@ -198,7 +198,7 @@ function tigernian_getTaskDetail() {
 function taskPostUrl(functionId, body) {
     return {
         //functionId=tigernian_getHomeData&body={}&client=wh5&clientVersion=1.0.0
-        url: `https://wbbny.m.jd.com/babelDiy/Zeus/41AJZXRUJeTqdBK9bPoPgUJiodcU/index.html?babelChannel=syfc&shareType=koiHelp&inviteId=KOIASTT022v_92QBge_FHWPRv8kPcNdwCTdWmoaR5kRrbA&mpin=RnFlkGRdaDDewtQUrYF3W9l0z8y9BijtvuSD&from=sc`,
+        url: `${JD_API_HOST}`,
         body: `functionId=${functionId}&body=${escape(JSON.stringify(body))}&client=wh5&clientVersion=1.0.0`,
         headers: {
             'Cookie': cookie,
