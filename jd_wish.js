@@ -29,6 +29,21 @@ let appIdArr = ["1GFNRxq8","1GVFUx6g", "1E1xZy6s", "1GVJWyqg","1GFRRyqo"];
 let appNameArr = ["新年宠粉","JOY年味之旅","PLUS生活特权", "虎娃迎福","过新潮年"];
 let appId, appName;
 $.shareCode = [];
+$.shareCode.push({
+  "code": "T022v_92QBge_FHWPRv8kPcNdwAzBTm6u7zDYjeQOc",
+  "appId": "1GVFUx6g",
+  "use": "125067951-184073"
+})
+$.shareCode.push({
+  "code": "T022v_92QBge_FHWPRv8kPcNdwAzNRlqu7yx55awQ",
+  "appId": "1GVJWyqg",
+  "use": "125067951-184073"
+})
+$.shareCode.push({
+  "code": "T022v_92QBge_FHWPRv8kPcNdwAjVWlqm7zB55awQ",
+  "appId": "1GFRRyqo",
+  "use": "125067951-184073"
+})
 if ($.isNode()) {
   Object.keys(jdCookieNode).forEach((item) => {
     cookiesArr.push(jdCookieNode[item])
